@@ -1,0 +1,68 @@
+body {
+    margin: 0; /* remove a margem padrão do navegador */
+}
+
+/* CABEÇALHO */
+
+.parte_superior {
+    width: 100%; /* faz o cabeçalho ocupar toda a largura da tela */
+    border-bottom: 4px solid blue; /* cria uma linha azul na parte de baixo */
+    display: flex; /* ativa o flexbox para organizar os elementos em linha e deixa eles alinhados na horizontal */
+    justify-content: space-between; /* joga os itens para as extremidades (esquerda e direita) */
+    align-items: center; /* centraliza os itens verticalmente */
+        
+        background-color: black; /* Fundo preto. */
+}
+
+.parte_superior li{
+    list-style: none; /* tira os "•" do itens (Home / Login / Cadastro) */
+}
+
+.parte_superior a{
+    font-family: 'fantasy', cursive; /* fonte */
+    color: yellow; /* cor da fonte */
+        
+        text-shadow: /* coloca contorno na fonte e na cor azul*/
+            -0.6px -0.6px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            0.6px -0.6px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            -0.6px  0.6px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            0.6px  0.6px 0 blue; /* coloca contorno na fonte e na cor azul*/
+}
+
+.titulo_superior{
+    margin-left: 100px; /* faz um "espaçamento" de tudo que está na esquerda do titulo */
+    font-size: 37px; /* tamanho da fonte */
+}
+
+.parte_superior img{
+    height: 40px; /* tamanho da imagem (pokebola) */
+    margin-right: 1310px; /* faz um "espaçamento" de tudo que está na direita da imagem */
+    margin-top: 10px; /* faz um "espaçamento" de tudo que está em cima da imagem */
+}
+
+.itens_superior{
+    display: flex; /* Faz os itens ficarem em linha */
+    gap: 25px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
+    margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+}
+
+.titulo_superior{
+    font-family: 'fantasy', cursive; /* fonte */
+    color: yellow; /* cor da fonte */
+    text-shadow: /* coloca contorno na fonte e na cor azul*/
+        -2px -2px 0 blue, /* coloca contorno na fonte e na cor azul*/
+         2px -2px 0 blue, /* coloca contorno na fonte e na cor azul*/
+        -2px  2px 0 blue, /* coloca contorno na fonte e na cor azul*/
+         2px  2px 0 blue; /* coloca contorno na fonte e na cor azul*/
+}
+
+.cadastro {
+    background-image: url("fundo.jpg"); /* Coloca uma imagem de fundo */
+    background-size: cover; /* A imagem cobre toda a tela, sem se repetir */
+    height: 860px; /* A altura da tela de login é 860px */
+}
+
+.titulo_cadastro{
+    display: flex;
+    align-items: center; /* horizontal */
+}

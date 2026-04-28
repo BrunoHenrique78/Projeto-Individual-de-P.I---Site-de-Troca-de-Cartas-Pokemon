@@ -1,32 +1,32 @@
-create database Projeto_Individual;
+CREATE DATABASE Projeto_Individual;
 
-use Projeto_Individual;
+USE Projeto_Individual;
 
-Create Table Usuario(
-ID_usuario Int Primary Key Auto_Increment,
-Nome Varchar(100) Not Null,
-Email Varchar(100) Not Null Unique,
-Telefone Char(14) Not Null Unique,
-CPF Char(11) Not Null Unique,
-Senha Varchar(100) Not Null
-) Auto_Increment = 1000;
+CREATE TABLE Usuario (
+    ID_Usuario INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    Telefone CHAR(14) NOT NULL UNIQUE,
+    CPF CHAR(11) NOT NULL UNIQUE,
+    Senha VARCHAR(100) NOT NULL
+) 	AUTO_INCREMENT = 1000;
 
-Create Table Endereco(
-Estado Varchar(100) Not Null,
-Cidade Varchar(100) Not Null,
-Bairro Varchar(100) Not Null,
-FK_Usuario Int Primary Key Not Null,
-Foreign Key (FK_Usuario) References Usuário (ID_Usuario)
+CREATE TABLE Endereco (
+    ID_Endereco INT PRIMARY KEY AUTO_INCREMENT,
+    Estado VARCHAR(100) NOT NULL,
+    Cidade VARCHAR(100) NOT NULL,
+    Bairro VARCHAR(100) NOT NULL,
+    FK_Usuario INT NOT NULL,
+    FOREIGN KEY (FK_Usuario) REFERENCES Usuario(ID_Usuario)
 );
 
-Create Table Cartas(
-ID_carta Int Not Null auto_Increment,
-Nome Varchar(100) Not Null,
-Classificao Varchar(20) Not Null,
-Descricao_Da_Classificacao Varchar(100) Not Null,
-Qualidade Varchar(100) Not Null,
-Descricao Varchar(300) Not Null,
-FK_Carta Int Not Null,
-Primary Key (FK_Carta, ID_Carta),
-Foreign Key (FK_Carta) References Usuario (ID_Usuario)
+CREATE TABLE Cartas (
+    ID_Carta INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100) NOT NULL,
+    Classificacao VARCHAR(20) NOT NULL,
+    Descricao_Classificacao VARCHAR(100) NOT NULL,
+    Qualidade VARCHAR(100) NOT NULL,
+    Descricao VARCHAR(300) NOT NULL,
+    FK_Usuario INT NOT NULL,
+    FOREIGN KEY (FK_Usuario) REFERENCES Usuario(ID_Usuario)
 );

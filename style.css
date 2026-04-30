@@ -1,15 +1,17 @@
-body {
+body{
     margin: 0; /* remove a margem padrão do navegador */
 }
 
 /* CABEÇALHO */
 
-.parte_superior {
+.parte_superior{
     width: 100%; /* faz o cabeçalho ocupar toda a largura da tela */
     border-bottom: 4px solid blue; /* cria uma linha azul na parte de baixo */
     display: flex; /* ativa o flexbox para organizar os elementos em linha e deixa eles alinhados na horizontal */
     justify-content: space-between; /* joga os itens para as extremidades (esquerda e direita) */
     align-items: center; /* centraliza os itens verticalmente */
+
+        font-weight: bold; /* coloca o negrito no texto dentro do span */
         
         background-color: black; /* Fundo preto. */
 }
@@ -19,14 +21,15 @@ body {
 }
 
 .parte_superior a{
-    font-family: 'fantasy', cursive; /* fonte */
     color: yellow; /* cor da fonte */
-        
-        text-shadow: /* coloca contorno na fonte e na cor azul*/
-            -0.6px -0.6px 0 blue, /* coloca contorno na fonte e na cor azul*/
-            0.6px -0.6px 0 blue, /* coloca contorno na fonte e na cor azul*/
-            -0.6px  0.6px 0 blue, /* coloca contorno na fonte e na cor azul*/
-            0.6px  0.6px 0 blue; /* coloca contorno na fonte e na cor azul*/
+     text-decoration: none; /* tira os "•" do itens (Home / Login / Cadastro) */
+     font-size: 17px;
+
+     text-shadow: /* coloca contorno na fonte e na cor azul*/
+            -1px -1px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            1px -1px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            -1px  1px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            1px  1px 0 blue; /* coloca contorno na fonte e na cor azul*/
 }
 
 .titulo_superior{
@@ -35,8 +38,8 @@ body {
 }
 
 .parte_superior img{
-    height: 40px; /* tamanho da imagem (pokebola) */
-    margin-right: 1310px; /* faz um "espaçamento" de tudo que está na direita da imagem */
+    height: 160px; /* tamanho da imagem (Logo) */
+    margin-left: 50px; /* faz um "espaçamento" de tudo que está na esquerda da imagem */
     margin-top: 10px; /* faz um "espaçamento" de tudo que está em cima da imagem */
 }
 
@@ -44,25 +47,63 @@ body {
     display: flex; /* Faz os itens ficarem em linha */
     gap: 25px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
     margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.titulo_superior{
-    font-family: 'fantasy', cursive; /* fonte */
-    color: yellow; /* cor da fonte */
-    text-shadow: /* coloca contorno na fonte e na cor azul*/
-        -2px -2px 0 blue, /* coloca contorno na fonte e na cor azul*/
-         2px -2px 0 blue, /* coloca contorno na fonte e na cor azul*/
-        -2px  2px 0 blue, /* coloca contorno na fonte e na cor azul*/
-         2px  2px 0 blue; /* coloca contorno na fonte e na cor azul*/
-}
+/* Parte do Card de Cadastro e Login */
 
-.cadastro {
-    background-image: url("fundo.jpg"); /* Coloca uma imagem de fundo */
+.fundo{
+    background-image: url("6be93d6e-6791-4346-aac6-68efe2902d53.png");
     background-size: cover; /* A imagem cobre toda a tela, sem se repetir */
-    height: 860px; /* A altura da tela de login é 860px */
+    height: 83.9vh; /* A altura da tela de login é 860px */
+    display: flex;
+
+        justify-content: center; /* centraliza horizontal */
+        align-items: center;     /* centraliza vertical */
+
+        font-weight: bold; /* coloca o negrito no texto dentro do span */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        color: yellow;
+        text-shadow: /* coloca contorno na fonte e na cor azul*/
+            -1px -1px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            1px -1px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            -1px  1px 0 blue, /* coloca contorno na fonte e na cor azul*/
+            1px  1px 0 blue; /* coloca contorno na fonte e na cor azul*/
 }
 
-.titulo_cadastro{
+.card{
+    background-color: rgba(255, 255, 255, 0.76); /* Cor de fundo do cartão é cinza claro */
+    border-radius: 13px; /* Arredonda os cantos do cartão */
+    width: 450px; /* Largura do cartão é 450px */
+    text-align: center; /* Centraliza o texto dentro do cartão */
+    padding: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.info{
     display: flex;
-    align-items: center; /* horizontal */
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card span{
+    font-weight: bold; /* coloca o negrito no texto dentro do span */
+}
+
+.card input{
+    padding: 7px; /* Coloca 10px de espaço dentro dos campos. */
+    border-radius: 8px; /* Arredonda os cantos dos campos. */
+    border: 2px solid blue; /* Define uma borda azul clara ao redor dos campos. */
+}
+
+.botao{
+    width: 42%;
+    background-color: blue; /* Cor de fundo do botão é rosa. */
+    color: white; /* Cor do texto do botão é branco. */
+    padding: 10px; /* Coloca 10px de espaço dentro do botão. */
+    border: none; /* Remove a borda padrão do botão. */
+    border-radius: 8px; /* Arredonda os cantos do botão. */
+    font-weight: bold; /* Deixa o texto que está dentro do botão em negrito */
 }

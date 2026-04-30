@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>PokéSwap</title>
+    <title>PokéSwap | Cadastro</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -15,7 +15,7 @@
 
   <div class="parte_superior">
 
-    <h1 class="titulo_superior">PokéSwap</h1><img src="Pokebola-pokeball-png-0.png" alt="pokebola_imagem">
+    <img src="Logo do Projeto Individual.png" alt="Logo">
 
     <div class="itens_superior">
         
@@ -29,33 +29,67 @@
 
   </div>
 
-</body>
-</html>
 
 <!--PARTE DO QUADRADO CADASTRO -->
 
-<div class="cadastro">
+<div class="fundo">
+  <div class="card">
 
-    <h2 class="titulo_cadastro">Bem-vindo!</h2>
+    <h2 class="titulo">Bem-vindo Novo Treinador!</h2>
 
-        <div class="informacoes_cadastro">
-          <div class="campo">
+        <div class="informacoes">
+          <div class="info">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
-          <div class="campo">
+
+          <div class="info">
             <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+            <input id="email_input" type="text" placeholder="PokeSwap@provedor.com" />
           </div>
-          <div class="campo">
+
+          <div class="info">
+            <span>CPF:</span>
+            <input id="cpf_input" type="text" placeholder="***********" />
+          </div>
+
+          <div class="info">
             <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
+            <input id="senha_input" type="text" placeholder="******" />
           </div>
-          <div class="campo">
+
+          <div class="info">
             <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+            <input id="confirmacao_senha_input" type="text" placeholder="******" />
           </div>
-          <button class="botao">Cadastrar</button>
+
+          <button class="botao" onclick="registrar()">Registrar</button>
         </div>
+
       </div>
-  </div>
+  </div>    
+</div>
+
+  <div id="div_alert"></div>
+
+</body>
+</html>
+<script>
+
+function registrar(){
+
+div_alert = "";
+
+let nome = nome_input.value;
+let email = email_input.value;
+let cpf = cpf_input.value;
+let senha = senha_input.value;
+let conf_senha = confirmacao_senha_input.value;
+
+  if(nome == "" || email == "" || cpf == "" || senha == "" || conf_senha == ""){
+    div_alert.innerHTML = `Preencha todos os campos necessários para o registro Treinador!`
+  }
+}
+
+
+</script>

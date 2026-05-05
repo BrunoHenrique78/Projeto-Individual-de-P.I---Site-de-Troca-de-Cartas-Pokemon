@@ -19,11 +19,7 @@
 
     <div class="itens_superior">
         
-        <li><a href="site.html">Home</a></li>
-
-        <li><a href="telaLogin.html">Login</a></li>
-        
-        <li class="agora"><a href="telaCadastro.html">Cadastro</a></li>
+        <img src="icone_voltar.png"><li><a href="index.html">Início</a></li>
 
     </div>
 
@@ -63,8 +59,17 @@
             <input id="confirmacao_senha_input" type="text" placeholder="******" />
           </div>
 
+          <p></p>
+
           <button class="botao" onclick="registrar()">Registrar</button>
         </div>
+
+        <p></p>
+
+        <div class="info">
+            <span>Já tem conta?</span><a href="login.html">Login</a>
+          </div>
+
 
       </div>
   </div>    
@@ -76,9 +81,15 @@
 </html>
 <script>
 
+let vetor_nome = []
+let vetor_email = [];
+let vetor_cpf = [];
+let vetor_senha = [];
+let vetor_conf_senha = [];
+
 function registrar(){
 
-div_alert = "";
+div_alert.innerHTML = "";
 
 let nome = nome_input.value;
 let email = email_input.value;
@@ -86,9 +97,75 @@ let cpf = cpf_input.value;
 let senha = senha_input.value;
 let conf_senha = confirmacao_senha_input.value;
 
+
+
   if(nome == "" || email == "" || cpf == "" || senha == "" || conf_senha == ""){
-    div_alert.innerHTML = `Preencha todos os campos necessários para o registro Treinador!`
+    div_alert.innerHTML = `Preencha todos os campos necessários para o registro Treinador!`;
+
+    return;
   }
+
+  let temArroba = 0;
+  let temPonto = 0;
+
+  for(let i = 0; i < email.length; i++){
+    if(email[i] == "@"){
+        temArroba++;
+    }
+    if(email[i] == "."){
+        temPonto++;
+    }
+  }
+
+  if(temArroba == 0 || temPonto == 0){
+    div_alert.innerHTML = `E-mail inválido!`;
+    return;
+  }
+
+  let tamanhoCpf = 0;
+
+  for(let i = 0; i < cpf.length; i++){
+    tamanhoCpf++;
+  }
+
+  if(tamanhoCpf != 11){
+    div_alert.innerHTML = `CPF deve ter 11 números! (Somente números)`;
+    return;
+  }
+
+
+  vetor_senha = [];
+  vetor_conf_senha = [];
+
+  vetor_senha.push(senha);
+  vetor_conf_senha.push(conf_senha);
+
+  for(let i = 0; i < vetor_senha.length; i++){
+    if(vetor_senha[i] != vetor_conf_senha[i]){
+        div_alert.innerHTML = `As senhas não coincidem!`;
+        return;
+    }
+  }
+
+  for(let i = 0; i < vetor_email.length; i++){
+    if(email == vetor_email[i]){
+        div_alert.innerHTML = `E-mail já cadastrado!`;
+        return;
+    }
+  }
+
+  for(let i = 0; i < vetor_cpf.length; i++){
+    if(cpf == vetor_cpf[i]){
+        div_alert.innerHTML = `CPF já cadastrado!`;
+        return;
+    }
+  }
+
+vetor_email.push(email);
+vetor_cpf.push(cpf);
+
+div_alert.innerHTML = `Cadastro realizado com sucesso!`;
+
 }
 
 

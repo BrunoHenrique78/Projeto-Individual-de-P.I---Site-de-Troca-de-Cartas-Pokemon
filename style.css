@@ -25,10 +25,6 @@ body{
      font-size: 25px;
 }
 
-.agora a{
-    color: red;
-}
-
 .titulo_superior{
     margin-left: 100px; /* faz um "espaçamento" de tudo que está na esquerda do titulo */
     font-size: 37px; /* tamanho da fonte */

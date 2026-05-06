@@ -119,7 +119,7 @@ a:hover{
 }
 
 .pagina_um{
-    background-image: url("262a9660-628e-4501-b2de-46e057897d20.png");
+    background-image: url("fundo_normal.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;
@@ -169,7 +169,7 @@ a:hover{
 }
 
 .pagina_dois{
-    background-image: url("262a9660-628e-4501-b2de-46e057897d201.png");
+    background-image: url("fundo_normal_invertido.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;

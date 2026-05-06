@@ -14,6 +14,8 @@ body{
         font-weight: bold; /* coloca o negrito no texto dentro do span */
         
         background-color: black; /* Fundo preto. */
+
+       
 }
 
 .parte_superior li{
@@ -21,8 +23,9 @@ body{
 }
 
 .parte_superior a{
-    color: white; /* cor da fonte */
-     font-size: 25px;
+    color: gray; /* cor da fonte */
+    font-size: 18px;
+    text-decoration: none;
 }
 
 .titulo_superior{
@@ -31,18 +34,14 @@ body{
 }
 
 .parte_superior img{
-    height: 160px; /* tamanho da imagem (Logo) */
+    height: 140px; /* tamanho da imagem (Logo) */
     margin-left: 50px; /* faz um "espaçamento" de tudo que está na esquerda da imagem */
     margin-top: 10px; /* faz um "espaçamento" de tudo que está em cima da imagem */
 }
 
-.itens_superior img{
-    height: 25px; /* tamanho da imagem (Logo) */
-}
-
 .itens_superior{
     display: flex; /* Faz os itens ficarem em linha */
-    gap: 25px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
+    gap: 30px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
     margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -52,7 +51,7 @@ body{
 .fundo{
     background-image: url("fundo_cadastro_login.png");
     background-size: cover; /* A imagem cobre toda a tela, sem se repetir */
-    height: 83.9vh; /* A altura da tela de login é 860px */
+    height: 85.7vh; /* A altura da tela de login é 860px */
     display: flex;
 
         justify-content: center; /* centraliza horizontal */
@@ -106,4 +105,122 @@ body{
 
 .info a{
     color: red;
+}
+
+.login_inicio{
+    display: flex; /* Faz os itens ficarem em linha */
+    gap: 25px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
+    margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover{
+    color: white;
+}
+
+.pagina_um{
+    background-image: url("262a9660-628e-4501-b2de-46e057897d20.png");
+    background-size: cover;
+    background-position: center;
+    height: 85.7vh;
+
+    display: flex;
+    align-items: center;      /* centraliza vertical */
+    justify-content: flex-start; /* joga pra esquerda */
+
+    padding-left: 100px; /* espaço da esquerda */
+
+    color: white; 
+}
+
+.titulo_principal{
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.2;
+
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+
+.descricao{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+    max-width: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botao_home{
+    padding: 10px;
+
+    background-color: gray;
+    color: white;
+
+    text-decoration: none; /* tira o sublinhado */
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagina_dois{
+    background-image: url("262a9660-628e-4501-b2de-46e057897d201.png");
+    background-size: cover;
+    background-position: center;
+    height: 85.7vh;
+
+    display: flex;
+    align-items: center;      /* centraliza vertical */
+    justify-content: flex-start; /* joga pra esquerda */
+
+    padding-left: 100px; /* espaço da esquerda */
+
+    color: white; 
+}
+
+.itens_pag2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    padding: 100px;
+}
+
+.img_pag2{
+    width: 600px;
+    border-radius: 15px;
+}
+
+.itens_pag2{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px); 
+
+    padding: 100px;
+    border-radius: 15px;
+
+    max-width: 1000px;
+    color: white;
+
+    margin-left: 230px;
+}
+
+.titulo_principal_pag2{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.descricao1_pag2{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.descricao2_pag2{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

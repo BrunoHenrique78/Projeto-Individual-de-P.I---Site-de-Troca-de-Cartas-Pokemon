@@ -26,7 +26,7 @@
 
   <div class="navbar_esquerda">
 
-    <img src="../assets/icon/Logo do Projeto Individual2.png" alt="Logo">
+    <img src="../assets/icon/Logo do Projeto Individual.png" alt="Logo">
 
     <div class="itens_navbar_esquerda">
 
@@ -47,29 +47,46 @@
     <h1 class="titulo_dash">Bem-vindo Usuário!</h1>
 
     <div class="KPI">
-        <div class="KPI1_dash">
-            Total de Cartas Registradas:
-        </div>
+        <div class="KPI_ajuste">
+            <div class="KPI1_dash">
+                Total de Cartas Registradas:
 
-        <div class="KPI2_dash">
-            Total de Cartas Shiny:
-        </div>
+                <p></p>
 
-        <div class="KPI3_dash">
-            Total de Cartas com Mega Evolução:
+                <span>0 Carta(/s)</span>
+
+            </div>
+
+            <div class="KPI2_dash">
+                Total de Cartas Shiny:
+
+                <p></p>
+
+                <span>0 Shiny(/s)</span>
+
+            </div>
+
+            <div class="KPI3_dash">
+                Total de Cartas com Mega Evolução:
+
+                <p></p>
+
+                <span>0 Mega(/s)</span>
+
+            </div>
         </div>
 
         <div class="grafico_de_barras">
             <canvas id="graficoBarras"></canvas>
         </div>
 
-        <div class="grafico_de_pizza">
-            <canvas id="graficoPizza"></canvas>
-        </div>
-
     </div>
 
 </div>
+
+        <div class="grafico_de_pizza">
+            <canvas id="graficoPizza"></canvas>
+        </div>
 
 </div>
 
@@ -79,6 +96,87 @@
 </html>
 
 <script>
+
+new Chart(document.getElementById('graficoBarras'), {
+    type: 'bar',
+    data: {
+        labels: ['Planta', 'Fogo', 'Água', 'Elétrico', 'Psíquico', 'Lutador', 'Escuridão', 'Metal', 'Dragão', 'Normal', 'Fada(Antigo)'],
+        datasets: [{
+            data: [10, 20, 30, 15, 12, 18, 9, 14, 22, 11, 7],
+            backgroundColor: [
+                'green', 'red', 'MediumBlue', 'yellow', 'MediumVioletRed',
+                'Chocolate', 'black', 'gray', 'BlueViolet', 'white', 'HotPink'
+            ]
+        }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+            title: {
+                display: true,
+                text: 'Quantidade de Cartas por Tipagem',
+                color: 'white',
+                font: {
+                    size: 22,
+                    weight: 'normal',
+                    family: 'Arial'
+                }
+            },
+
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            x: {
+                ticks: {
+                    color: 'white',
+                    font: {
+                        size: 14
+                    }
+                },
+                grid: {
+                    color: 'gray'
+                }
+            },
+            y: {
+                ticks: {
+                    color: 'white',
+                    font: {
+                        size: 14
+                    }
+                },
+                grid: {
+                    color: 'gray'
+                }
+            }
+        }
+    }
+});
+
+new Chart(document.getElementById('graficoPizza'), {
+    type: 'pie',
+
+    data: {
+        labels: ['Planta', 'Fogo', 'Água', 'Elétrico'],
+
+        datasets: [{
+            data: [10, 20, 30, 15],
+
+            backgroundColor: [
+                'green',
+                'red',
+                'blue',
+                'yellow'
+            ]
+        }]
+    }
+});
+
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     let proximaAtualizacao;

@@ -56,7 +56,7 @@ body{
 /* Parte do Card de Cadastro e Login */
 
 .fundo{
-    background-image: url("fundo_cadastro_login.png");
+    background-image: url("../assets/imgs/fundo_cadastro_login.png");
     background-size: cover; /* A imagem cobre toda a tela, sem se repetir */
     height: 85.7vh; /* A altura da tela de login é 860px */
     display: flex;
@@ -137,7 +137,7 @@ a:hover{
 }
 
 .pagina_um{
-    background-image: url("fundo_normal.png");
+    background-image: url("../assets/imgs/fundo_normal.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;
@@ -203,7 +203,7 @@ a:hover{
 
 
 .pagina_dois{
-    background-image: url("fundo_normal_invertido.png");
+    background-image: url("../assets/imgs/fundo_normal_invertido.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;
@@ -263,7 +263,7 @@ a:hover{
 }
 
 .pagina_tres{
-    background-image: url("fundo_normal.png");
+    background-image: url("../assets/imgs/fundo_normal.png");
     background-size: cover;
     background-position: center;
     height: 150vh;
@@ -351,7 +351,7 @@ a:hover{
 }
 
 .pagina_quatro{
-    background-image: url("fundo_normal_invertido.png");
+    background-image: url("../assets/imgs/fundo_normal_invertido.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;

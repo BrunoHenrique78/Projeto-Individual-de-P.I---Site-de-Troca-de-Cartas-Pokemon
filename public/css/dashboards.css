@@ -1,0 +1,117 @@
+body{
+    margin: 0; /* remove a margem padrão do navegador */
+}
+
+/* CABEÇALHO */
+
+.navbar_esquerda{
+    width: 220px;
+    height: 100vh;
+
+    border-right: 4px solid rgb(39, 39, 39);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    background-color: black;
+    font-weight: bold;
+}
+
+.navbar_esquerda li{
+    list-style: none; /* tira os "•" do itens (Home / Login / Cadastro) */
+}
+
+.navbar_esquerda a{
+    color: gray; /* cor da fonte */
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.titulo_superior{
+    margin-left: 100px; /* faz um "espaçamento" de tudo que está na esquerda do titulo */
+    font-size: 37px; /* tamanho da fonte */
+}
+
+.navbar_esquerda img{
+    height: 140px;
+    margin: 20px;
+}
+
+.itens_navbar_esquerda{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 50px;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar_esquerda a{
+    color: gray;
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar_esquerda a:hover{
+    background-color: gray;
+    color: white;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.pagina_dash{
+    background-color: rgb(42, 42, 42);
+}
+
+.pagina_dash{
+    background-color: rgb(42, 42, 42);
+
+    display: flex;
+
+    min-height: 100vh;
+}
+
+.conteudo_dashboard{
+    padding: 40px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo_dash{
+    font-size: 50px;
+    margin-right: 300px;
+}
+
+.KPI{
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.KPI1_dash,
+.KPI2_dash,
+.KPI3_dash{
+    background-color: rgb(75, 75, 75);
+    border-radius: 8px;
+    padding: 15px;
+
+    width: 220px;
+    height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}

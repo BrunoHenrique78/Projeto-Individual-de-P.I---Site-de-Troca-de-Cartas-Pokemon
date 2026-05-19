@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaTech | Página Inicial</title>
+
+    <script src="./js/sessao.js"></script>
+
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="./assets/icon/Logo do Projeto Individual.ico">
+</head>
+
+<body>
+  <div class="parte_superior">
+
+    <img src="./assets/icon/Logo do Projeto Individual.png" alt="Logo">
+
+    <div class="itens_superior">
+
+    <li>
+        <a href="#sobre_nos">Sobre Nós</a>
+    </li>
+
+    <li>
+        <a href="#quiz">Quiz de Treinador</a>
+    </li>
+
+    <li style="color: gray;"><strong>|</strong></li>
+
+    <li class="botao_login">
+        <a href="login.html">Login</a>
+    </li>
+    </div>
+
+  </div>
+
+    <div class="pagina_um">
+    <div class="itens_pag1">
+
+        <h1 class="titulo_principal">
+        Sua próxima carta <br>
+        está a uma <br>
+        troca de <br>
+        distância.
+        </h1>
+
+        <p class="descricao">
+        Organize sua coleção, encontre o que precisa e negocie com outros jogadores próximos.
+        </p>
+
+        <br>
+        <P></P>
+        
+        <a href="cadastro.html" class="botao_home">Começar Agora</a>
+    </div>
+    </div>
+
+    <div class="pagina_dois" id="sobre_nos">
+    <div class="itens_pag2">
+
+        <img src="./assets/imgs/gif_carta.gif" class="img_pag2">
+
+        <div class="card_texto">
+
+            <h1 class="titulo_principal_pag2">
+                Queremos transformar<br>
+                a forma como<br>
+                treinadores realizam<br>
+                trocas de cartas.
+            </h1>
+
+            <p class="descricao1_pag2">
+                Atualmente, a troca de cartas Pokémon acontece de forma desorganizada, muitas vezes em redes sociais ou eventos presenciais, dificultando encontrar cartas específicas e negociações seguras.
+            </p>
+
+            <p class="descricao2_pag2">
+                Nossa proposta é criar uma plataforma onde treinadores possam cadastrar suas cartas, encontrar outros usuários próximos e realizar trocas de maneira mais eficiente, prática e segura.
+            </p>
+
+        </div>
+
+    </div>
+    </div>
+
+    <div class="pagina_tres" id="quiz">
+    <div class="itens_pag3">
+
+        <h1 class="titulo_pag3">Venha saber qual treinador combina com você</h1>
+        
+        <p></p>
+
+        <!-- PERGUNTA 1 -->
+
+        <h2>1. Em uma batalha você:</h2>
+
+        <select id="pergunta1">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Ataca sem parar</option>
+
+            <option value="estrategico">Analisa o adversário</option>
+
+            <option value="equilibrado">Se adapta durante a luta</option>
+
+            <option value="defensivo">Espera o momento certo</option>
+
+            <option value="tecnico">Usa combinações de golpes</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 2 -->
+
+        <h2>2. Seu time ideal seria:</h2>
+
+        <select id="pergunta2">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Pokémon rápidos e fortes</option>
+
+            <option value="estrategico">Pokémon inteligentes</option>
+
+            <option value="equilibrado">Um time balanceado</option>
+
+            <option value="defensivo">Pokémon resistentes</option>
+
+            <option value="tecnico">Pokémon técnicos</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 3 -->
+
+        <h2>3. Como você prefere vencer?</h2>
+
+        <select id="pergunta3">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Rapidamente</option>
+
+            <option value="estrategico">Com inteligência</option>
+
+            <option value="equilibrado">Se adaptando</option>
+
+            <option value="defensivo">Resistindo mais</option>
+
+            <option value="tecnico">Executando combos perfeitos</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 4 -->
+
+        <h2>4. Seu maior ponto forte é:</h2>
+
+        <select id="pergunta4">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Ataque</option>
+
+            <option value="estrategico">Inteligência</option>
+
+            <option value="equilibrado">Versatilidade</option>
+
+            <option value="defensivo">Defesa</option>
+
+            <option value="tecnico">Precisão</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 5 -->
+
+        <h2>5. Quando está perdendo você:</h2>
+
+        <select id="pergunta5">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Aumenta a pressão</option>
+
+            <option value="estrategico">Muda a estratégia</option>
+
+            <option value="equilibrado">Improvisa</option>
+
+            <option value="defensivo">Se protege mais</option>
+
+            <option value="tecnico">Usa uma técnica específica</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 6 -->
+
+        <h2>6. Seu estilo de jogo é:</h2>
+
+        <select id="pergunta6">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Agressivo</option>
+
+            <option value="estrategico">Calculado</option>
+
+            <option value="equilibrado">Flexível</option>
+
+            <option value="defensivo">Paciente</option>
+
+            <option value="tecnico">Preciso</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 7 -->
+
+        <h2>7. Você prefere Pokémon:</h2>
+
+        <select id="pergunta7">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Fortes</option>
+
+            <option value="estrategico">Inteligentes</option>
+
+            <option value="equilibrado">Versáteis</option>
+
+            <option value="defensivo">Resistentes</option>
+
+            <option value="tecnico">Difíceis de dominar</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 8 -->
+
+        <h2>8. Em uma troca você:</h2>
+
+        <select id="pergunta8">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Vai direto ao ponto</option>
+
+            <option value="estrategico">Analisa tudo antes</option>
+
+            <option value="equilibrado">Negocia</option>
+
+            <option value="defensivo">Espera uma oportunidade</option>
+
+            <option value="tecnico">Usa lógica e estratégia</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 9 -->
+
+        <h2>9. Seu objetivo em batalha é:</h2>
+
+        <select id="pergunta9">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Dominar o adversário</option>
+
+            <option value="estrategico">Controlar a batalha</option>
+
+            <option value="equilibrado">Se adaptar a qualquer situação</option>
+
+            <option value="defensivo">Resistir até o final</option>
+
+            <option value="tecnico">Executar tudo perfeitamente</option>
+
+        </select>
+
+        <br>
+        <br>
+
+        <!-- PERGUNTA 10 -->
+
+        <h2>10. Qual tipo de Pokémon você prefere?</h2>
+
+        <select id="pergunta10">
+
+            <option value="">Escolha uma opção</option>
+
+            <option value="ofensivo">Fogo e Elétrico</option>
+
+            <option value="estrategico">Psíquico e Dragão</option>
+
+            <option value="equilibrado">Água e Normal</option>
+
+            <option value="defensivo">Pedra e Aço</option>
+
+            <option value="tecnico">Fantasma e Gelo</option>
+
+        </select>
+
+        <p></p>
+        <br>
+
+        <button onclick="resultado()" class="botao_quiz">
+            Descobrir Resultado
+        </button>
+
+        <div id="div_resultado2" class="resultado2"></div>
+
+    </div>
+    </div>
+
+    <div class="pagina_quatro">
+    <div class="itens_pag4">
+
+        <h1 class="titulo_principal">Resultado do Quiz:</h1>
+
+        <div id="div_resultado" class="resultado_quiz">
+            <div id="div_resultado2_2" class="resultado_quiz2">
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+</body>
+</html>
+<script>
+
+let ofensivo = 0;
+let estrategico = 0;
+let equilibrado = 0;
+let defensivo = 0;
+let tecnico = 0;
+
+function resultado(){
+
+    div_resultado.innerHTML = `
+    <div id="div_resultado2_2" class="resultado_quiz2"></div>
+    `;
+
+    div_resultado2_2.innerHTML = "";
+
+    if(
+        pergunta1.value == "" || pergunta2.value == "" || pergunta3.value == "" || pergunta4.value == "" || pergunta5.value == "" || pergunta6.value == "" || pergunta7.value == "" || pergunta8.value == "" || pergunta9.value == "" || pergunta10.value == ""
+    ){
+        div_resultado2.innerHTML = `Responda todas as perguntas!`;
+
+        return;
+    }
+
+    ofensivo = 0;
+    estrategico = 0;
+    equilibrado = 0;
+    defensivo = 0;
+    tecnico = 0;
+
+    /* PERGUNTA 1 */
+
+    if(pergunta1.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta1.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta1.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta1.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta1.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 2 */
+
+    if(pergunta2.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta2.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta2.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta2.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta2.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 3 */
+
+    if(pergunta3.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta3.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta3.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta3.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta3.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 4 */
+
+    if(pergunta4.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta4.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta4.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta4.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta4.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 5 */
+
+    if(pergunta5.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta5.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta5.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta5.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta5.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 6 */
+
+    if(pergunta6.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta6.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta6.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta6.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta6.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 7 */
+
+    if(pergunta7.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta7.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta7.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta7.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta7.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 8 */
+
+    if(pergunta8.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta8.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta8.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta8.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta8.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 9 */
+
+    if(pergunta9.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta9.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta9.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta9.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta9.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* PERGUNTA 10 */
+
+    if(pergunta10.value == "ofensivo"){
+        ofensivo++;
+    }
+
+    else if(pergunta10.value == "estrategico"){
+        estrategico++;
+    }
+
+    else if(pergunta10.value == "equilibrado"){
+        equilibrado++;
+    }
+
+    else if(pergunta10.value == "defensivo"){
+        defensivo++;
+    }
+
+    else if(pergunta10.value == "tecnico"){
+        tecnico++;
+    }
+
+    /* RESULTADO FINAL */
+
+    if(ofensivo > estrategico && ofensivo > equilibrado && ofensivo > defensivo && ofensivo > tecnico){
+
+        div_resultado.innerHTML += `
+    <img src="./assets/imgs/leon-pokemon.gif" class="img_resultado">`
+
+    div_resultado2_2.innerHTML = `
+    <p>
+        Leon é reconhecido como um dos treinadores mais fortes do mundo Pokémon
+        e ficou conhecido por permanecer invicto durante anos na região de Galar.
+        Sua confiança, carisma e presença em batalha fizeram dele um verdadeiro símbolo
+        do competitivo Pokémon.
+    </p>
+
+    <p>
+        Seu estilo de batalha é extremamente ofensivo e dominante.
+        Leon gosta de pressionar seus adversários constantemente,
+        mantendo o controle da luta através de ataques rápidos,
+        decisões agressivas e grande intensidade durante as batalhas.
+    </p>
+
+    <p>
+        Mesmo sendo ofensivo, Leon também demonstra grande capacidade estratégica.
+        Durante batalhas difíceis, ele consegue adaptar sua forma de lutar rapidamente,
+        surpreendendo adversários e mudando o ritmo da partida quando necessário.
+    </p>
+
+    <p>
+        Entre suas maiores conquistas estão o título de Campeão de Galar
+        e o reconhecimento mundial como um dos treinadores mais fortes
+        já vistos no anime Pokémon.
+    </p>
+
+    <p>
+        Sua personalidade competitiva, confiante e determinada demonstra
+        que você prefere enfrentar desafios de frente, sempre buscando evoluir,
+        melhorar suas habilidades e dominar qualquer batalha.
+    </p>
+`;
+
+    }
+
+    else if(estrategico > ofensivo && estrategico > equilibrado && estrategico > defensivo && estrategico > tecnico){
+
+        div_resultado.innerHTML += `
+    <img src="./assets/imgs/cynthia-pokemon.gif" class="img_resultado">`
+
+    div_resultado2_2.innerHTML = `
+
+    <p>
+        Cynthia é considerada uma das treinadoras mais inteligentes e respeitadas
+        do universo Pokémon. Campeã da região de Sinnoh, ela se tornou conhecida
+        por sua calma, elegância e enorme conhecimento sobre batalhas e história Pokémon.
+    </p>
+
+    <p>
+        Seu estilo de batalha é extremamente estratégico.
+        Cynthia raramente toma decisões impulsivas, preferindo analisar cuidadosamente
+        o adversário antes de agir. Sua capacidade de prever movimentos e controlar
+        o ritmo da luta faz dela uma adversária extremamente perigosa.
+    </p>
+
+    <p>
+        Além da inteligência tática, Cynthia demonstra enorme equilíbrio emocional.
+        Mesmo sob pressão, ela permanece calma e focada, conseguindo transformar
+        situações difíceis em vantagem através de planejamento e adaptação.
+    </p>
+
+    <p>
+        Entre seus maiores títulos está o posto de Campeã de Sinnoh,
+        além de ser constantemente reconhecida como uma das treinadoras
+        mais fortes e completas de toda a franquia Pokémon.
+    </p>
+
+    <p>
+        Sua personalidade mostra que você valoriza inteligência,
+        estratégia e autocontrole, preferindo vencer através do raciocínio,
+        da leitura do adversário e de decisões calculadas.
+    </p>
+`;
+
+    }
+
+    else if(equilibrado > ofensivo && equilibrado > estrategico && equilibrado > defensivo && equilibrado > tecnico){
+
+div_resultado.innerHTML += `
+    <img src="./assets/imgs/right-sorry-ash-ketchum.gif" class="img_resultado">`
+
+    div_resultado2_2.innerHTML = `
+
+    <p>
+        Ash Ketchum é um dos treinadores mais conhecidos do mundo Pokémon,
+        famoso por sua determinação, coragem e capacidade de nunca desistir.
+        Sua jornada atravessou diversas regiões, acumulando experiências,
+        amizades e grandes batalhas ao longo dos anos.
+    </p>
+
+    <p>
+        Seu estilo de batalha é equilibrado e adaptável.
+        Ash não depende apenas de força ou estratégia, mas da capacidade
+        de improvisar e encontrar soluções criativas durante os combates.
+        Isso permite que ele consiga enfrentar diferentes tipos de adversários.
+    </p>
+
+    <p>
+        Uma das maiores qualidades de Ash é sua conexão emocional com seus Pokémon
+        e sua confiança em trabalho em equipe. Mesmo em situações difíceis,
+        ele mantém a motivação e continua buscando maneiras de evoluir.
+    </p>
+
+    <p>
+        Entre suas maiores conquistas estão o título de Campeão Mundial Pokémon
+        e diversas vitórias importantes em ligas regionais ao longo do anime.
+    </p>
+
+    <p>
+        Sua personalidade demonstra equilíbrio, persistência e criatividade,
+        indicando que você prefere aprender com desafios e evoluir constantemente,
+        sem desistir diante das dificuldades.
+    </p>
+`;
+
+    }
+
+    else if(defensivo > ofensivo && defensivo > estrategico && defensivo > equilibrado && defensivo > tecnico){
+
+        div_resultado.innerHTML += `
+    <img src="./assets/imgs/steven-stone-pokemon.gif" class="img_resultado">`
+
+    div_resultado2_2.innerHTML = `
+
+    <p>
+        Steven Stone é conhecido por sua inteligência, serenidade e enorme experiência
+        como Campeão da região de Hoenn. Seu comportamento calmo e racional faz dele
+        um treinador extremamente respeitado no universo Pokémon.
+    </p>
+
+    <p>
+        Seu estilo de batalha é baseado em resistência, paciência e controle.
+        Steven prefere observar cuidadosamente seus adversários antes de agir,
+        utilizando estratégias defensivas para desgastar o oponente aos poucos.
+    </p>
+
+    <p>
+        Além da defesa sólida, Steven demonstra grande precisão em suas decisões,
+        evitando erros e aproveitando oportunidades no momento exato.
+        Sua forma de lutar transmite segurança e estabilidade durante toda a batalha.
+    </p>
+
+    <p>
+        Entre suas maiores conquistas estão o título de Campeão de Hoenn
+        e o reconhecimento como um dos treinadores mais inteligentes
+        e consistentes da franquia Pokémon.
+    </p>
+
+    <p>
+        Sua personalidade demonstra maturidade, paciência e disciplina,
+        indicando que você prefere agir com cautela e inteligência,
+        construindo vitórias sólidas ao longo do tempo.
+    </p>
+`;
+
+    }
+
+    else{
+
+        div_resultado.innerHTML += `
+    <img src="./assets/imgs/alain-alan.gif" class="img_resultado">`
+
+        div_resultado2_2.innerHTML = `
+
+    <p>
+        Alain é conhecido por seu enorme foco, dedicação e habilidade técnica
+        durante batalhas Pokémon. Sua jornada foi marcada por treinamentos intensos,
+        aperfeiçoamento constante e grande busca por evolução pessoal.
+    </p>
+
+    <p>
+        Seu estilo de batalha é extremamente técnico e preciso.
+        Alain valoriza execução perfeita, estratégias refinadas
+        e domínio completo das situações durante as lutas.
+    </p>
+
+    <p>
+        Diferente de treinadores impulsivos, Alain prefere manter concentração total,
+        analisando cada detalhe da batalha para encontrar a melhor oportunidade
+        de vencer com eficiência.
+    </p>
+
+    <p>
+        Entre suas maiores conquistas estão vitórias importantes em torneios,
+        batalhas contra treinadores lendários e o reconhecimento
+        como um dos treinadores mais habilidosos de sua geração.
+    </p>
+
+    <p>
+        Sua personalidade demonstra disciplina, determinação e perfeccionismo,
+        indicando que você busca excelência em tudo o que faz
+        e prefere vencer através de técnica e preparação.
+    </p>
+`;
+    }
+
+}
+</script>
+  

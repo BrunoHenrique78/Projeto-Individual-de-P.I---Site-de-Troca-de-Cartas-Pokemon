@@ -1,0 +1,428 @@
+body{
+    margin: 0; /* remove a margem padrão do navegador */
+}
+
+/* CABEÇALHO */
+
+.parte_superior{
+    width: 100%; /* faz o cabeçalho ocupar toda a largura da tela */
+    border-bottom: 4px solid rgb(39, 39, 39); /* cria uma linha azul na parte de baixo */
+    display: flex; /* ativa o flexbox para organizar os elementos em linha e deixa eles alinhados na horizontal */
+    justify-content: space-between; /* joga os itens para as extremidades (esquerda e direita) */
+    align-items: center; /* centraliza os itens verticalmente */
+
+        font-weight: bold; /* coloca o negrito no texto dentro do span */
+        
+        background-color: black; /* Fundo preto. */
+       
+}
+
+.titulo{
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+
+.parte_superior li{
+    list-style: none; /* tira os "•" do itens (Home / Login / Cadastro) */
+}
+
+.parte_superior a{
+    color: gray; /* cor da fonte */
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.titulo_superior{
+    margin-left: 100px; /* faz um "espaçamento" de tudo que está na esquerda do titulo */
+    font-size: 37px; /* tamanho da fonte */
+}
+
+.parte_superior img{
+    height: 140px; /* tamanho da imagem (Logo) */
+    margin-left: 50px; /* faz um "espaçamento" de tudo que está na esquerda da imagem */
+    margin-top: 10px; /* faz um "espaçamento" de tudo que está em cima da imagem */
+}
+
+.itens_superior{
+    display: flex; /* Faz os itens ficarem em linha */
+    gap: 30px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
+    margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Parte do Card de Cadastro e Login */
+
+.fundo{
+    background-image: url("fundo_cadastro_login.png");
+    background-size: cover; /* A imagem cobre toda a tela, sem se repetir */
+    height: 85.7vh; /* A altura da tela de login é 860px */
+    display: flex;
+
+        justify-content: center; /* centraliza horizontal */
+        align-items: center;     /* centraliza vertical */
+
+        font-weight: bold; /* coloca o negrito no texto dentro do span */
+
+        color: white;
+}
+
+.card{
+    background-color: rgb(36, 36, 36); /* Cor de fundo do cartão é cinza claro */
+    border-radius: 13px; /* Arredonda os cantos do cartão */
+    width: 450px; /* Largura do cartão é 450px */
+    text-align: center; /* Centraliza o texto dentro do cartão */
+    padding: 25px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card span{
+    font-weight: bold; /* coloca o negrito no texto dentro do span */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card input{
+    padding: 7px; /* Coloca 10px de espaço dentro dos campos. */
+    border-radius: 8px; /* Arredonda os cantos dos campos. */
+    border: 2px solid gray; /* Define uma borda azul clara ao redor dos campos. */
+}
+
+.botao{
+    width: 42%;
+    background-color: gray; /* Cor de fundo do botão é rosa. */
+    color: white; /* Cor do texto do botão é branco. */
+    padding: 10px; /* Coloca 10px de espaço dentro do botão. */
+    border: none; /* Remove a borda padrão do botão. */
+    border-radius: 8px; /* Arredonda os cantos do botão. */
+    font-weight: bold; /* Deixa o texto que está dentro do botão em negrito */
+}
+
+.botao a:hover{
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.info a{
+    background-color: black;
+    color: gray;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login_inicio{
+    display: flex; /* Faz os itens ficarem em linha */
+    gap: 25px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
+    margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a:hover{
+    background-color: gray;
+    color: white;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.pagina_um{
+    background-image: url("fundo_normal.png");
+    background-size: cover;
+    background-position: center;
+    height: 85.7vh;
+
+    display: flex;
+    align-items: center;      /* centraliza vertical */
+    justify-content: flex-start; /* joga pra esquerda */
+
+    padding-left: 100px; /* espaço da esquerda */
+
+    color: white; 
+}
+
+.titulo_principal{
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.2;
+
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+
+.descricao{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+    max-width: 500px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botao_home{
+    padding: 15px;
+
+    background-color: white;
+    color: black;
+
+    text-decoration: none; /* tira o sublinhado */
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botao_home:hover{
+    background-color: gray;
+    color: white;
+    transition: 0.5s;
+    padding: 20px;
+}
+
+.botao_login a:hover{
+    background-color: gray;
+    color: white;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+
+.pagina_dois{
+    background-image: url("fundo_normal_invertido.png");
+    background-size: cover;
+    background-position: center;
+    height: 85.7vh;
+
+    display: flex;
+    align-items: center;      /* centraliza vertical */
+    justify-content: flex-start; /* joga pra esquerda */
+
+    padding-left: 100px; /* espaço da esquerda */
+
+    color: white; 
+}
+
+.itens_pag2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    padding: 100px;
+}
+
+.img_pag2{
+    width: 600px;
+    border-radius: 15px;
+}
+
+.itens_pag2{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px); 
+
+    padding: 100px;
+    border-radius: 15px;
+
+    max-width: 1000px;
+    color: white;
+
+    margin-left: 230px;
+}
+
+.titulo_principal_pag2{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.descricao1_pag2{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.descricao2_pag2{
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.pagina_dois{
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.pagina_tres{
+    background-image: url("fundo_normal.png");
+    background-size: cover;
+    background-position: center;
+    height: 150vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itens_pag3{
+    width: 900px;
+    
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px); 
+
+    border-radius: 20px;
+
+    padding: 50px;
+
+    color: white;
+
+    backdrop-filter: blur(5px);
+
+    text-align: center;
+}
+
+.itens_pag3 h1{
+    font-size: 35px;
+}
+
+.itens_pag3 h2{
+    font-size: 20px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.itens_pag3 select{
+    width: 190px;
+
+    padding: 7px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.botao_quiz{
+    padding: 10px;
+
+    background-color: black;
+    color: gray;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}   
+
+.botao_quiz:hover{
+    background-color: gray;
+    color: white;
+    transition: 0.5s;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.resultado2{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.alert{
+    font-size: 20px;
+}
+
+.titulo{
+    font-size: 33px;
+}
+
+.pagina_tres{
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.pagina_quatro{
+    background-image: url("fundo_normal_invertido.png");
+    background-size: cover;
+    background-position: center;
+    height: 85.7vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagina_quatro{
+    border-top: 2px solid rgba(255,255,255,0.1);
+}
+
+.itens_pag4{
+    width: 1200px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+
+    padding: 50px;
+
+    color: white;
+}
+
+.titulo_resultado{
+    font-size: 65px;
+
+    margin-bottom: 40px;
+}
+
+.resultado{
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 40px;
+}
+
+.img_resultado{
+    width: 320px;
+
+    height: 520px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.resultado_quiz{
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 20px;
+}
+
+.resultado_quiz h1{
+    font-size: 45px;
+}
+
+.resultado_quiz p{
+    font-size: 20px;
+}
+
+.resultado_quiz2{
+    display: flex;
+
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+}

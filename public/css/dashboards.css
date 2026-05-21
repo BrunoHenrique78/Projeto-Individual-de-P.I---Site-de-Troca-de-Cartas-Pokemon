@@ -208,17 +208,17 @@ body{
 
 .KPI1_dash{
 
-    border-left: 6px solid blue;
+    border-left: 6px solid white;
 }
 
 .KPI2_dash{
 
-    border-left: 6px solid yellow;
+    border-left: 6px solid grey;
 }
 
 .KPI3_dash{
 
-    border-left: 6px solid red;
+    border-left: 6px solid white;
 }
 
 .KPI span{

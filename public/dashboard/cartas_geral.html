@@ -61,14 +61,3 @@
 
 </body>
 </html>
-<script>
-
-let id = localStorage.getItem("carta_id");
-
-fetch(`https://api.pokemontcg.io/v2/cards/${id}`)
-.then(res => res.json())
-.then(json => {
-
-    div_resultado.innerHTML = `<img src="${json.data.images.small}">`;
-
-});

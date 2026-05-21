@@ -12,8 +12,104 @@
     <link rel="stylesheet" href="./../css/estilo_cadastro_carta.css">
 
 </head>
-
-    <div class=""></div>
-
 <body>
+
+    <div class="cadastro_carta">
+
+        <div class="navbar_esquerda">
+
+    <img src="../assets/icon/Logo do Projeto Individual.png" alt="Logo">
+
+            <div class="itens_navbar_esquerda">
+
+            <li>
+                <a href="dashboard.html">Estatística</a>
+            </li>
+
+            <li>
+                <a href="cadastro_carta.html">Registro de Cartas</a>
+            </li>
+
+            <li>
+                <a href="album_carta.html">Álbum de Cartas</a>
+            </li>
+
+            </div>
+
+        </div>
+
+        <div class="conteudo_cadastro_carta">
+
+            <h1 class="titulo_cadastro_carta">Registrador de Cartas Pokémon!</h1>
+
+                <div class="painel_cadastro_carta">
+
+                    <div class="barra_pesquisa">
+
+                        <input id="ipt_carta" type="text" placeholder="Pesquisar carta..."><button onclick="pesquisar()" title="Pesquisar cartas">🔍</button><button onclick="adicionar()" title="Adicionar carta">➕</button>
+
+                    </div>
+
+                    <br>
+
+                    <hr>
+
+                    <div id="div_resultado"></div>
+
+                </div>
+
+        </div>
+
+    </div>
+
+
+</body>
 </html>
+<script>
+
+let cartaSelecionada = "";
+
+function pesquisar(){
+
+let carta = ipt_carta.value;
+
+div_resultado.innerHTML = "";
+
+    fetch(`https://api.pokemontcg.io/v2/cards?q=name:"${carta}"`)
+
+        .then(resposta => resposta.json())
+
+        .then(json => {
+
+            for(let i = 0; i < json.data.length; i++){
+
+                div_resultado.innerHTML += `<div class="card_carta" onclick="cartaSelecionada='${json.data[i].id}'; this.style.border='3px solid white'">
+                                            
+                                            <img src="${json.data[i].images.small}">
+                                            
+                                            <br>
+
+                                            </div>
+                
+                                            `;
+            }
+
+        });
+
+    }
+
+function adicionar(){
+
+    if(cartaSelecionada == ""){
+        alert("Selecione uma carta primeiro!");
+        return;
+    }
+
+    alert("Carta selecionada: " + cartaSelecionada);
+
+    localStorage.setItem("carta_id", cartaSelecionada);
+
+    window.location = "album_carta.html";
+}
+
+</script>

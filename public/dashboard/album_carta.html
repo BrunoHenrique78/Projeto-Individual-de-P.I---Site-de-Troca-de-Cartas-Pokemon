@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/Logo do Projeto Individual.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeSwap | Cartas</title>
+
+    
+    <link rel="stylesheet" href="./../css/estilo_cadastro_carta.css">
+
+</head>
+<body>
+
+    <div class="cadastro_carta">
+
+        <div class="navbar_esquerda">
+
+    <img src="../assets/icon/Logo do Projeto Individual.png" alt="Logo">
+
+            <div class="itens_navbar_esquerda">
+
+            <li>
+                <a href="dashboard.html">Estatística</a>
+            </li>
+
+            <li>
+                <a href="cadastro_carta.html">Registro de Cartas</a>
+            </li>
+
+            <li>
+                <a href="album_carta.html">Álbum de Cartas</a>
+            </li>
+
+            </div>
+
+        </div>
+
+        <div class="conteudo_cadastro_carta">
+
+            <h1 class="titulo_cadastro_carta">Bem-vindo ao seu Albúm de Cartas Pokémon!</h1>
+
+                <div class="painel_cadastro_carta">
+
+                    <div class="barra_pesquisa">
+
+                    <div id="div_resultado"></div>
+
+                </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+<script>
+
+let id = localStorage.getItem("carta_id");
+
+fetch(`https://api.pokemontcg.io/v2/cards/${id}`)
+.then(res => res.json())
+.then(json => {
+
+    div_resultado.innerHTML = `<img src="${json.data.images.small}">`;
+
+});

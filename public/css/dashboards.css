@@ -1,46 +1,92 @@
+/* ========================= */
+/*           BODY            */
+/* ========================= */
+
 body{
-    margin: 0; /* remove a margem padrão do navegador */
+
+    margin: 0;
 }
 
-/* CABEÇALHO */
+
+
+/* ========================= */
+/*      PÁGINA DASHBOARD     */
+/* ========================= */
+
+.pagina_dash{
+
+    background: linear-gradient(135deg ,rgb(39, 39, 39), rgb(51, 51, 51), rgb(100, 100, 100));
+
+    display: flex;
+}
+
+/* ========================= */
+/*          NAVBAR           */
+/* ========================= */
 
 .navbar_esquerda{
-    width: 220px;
+
+    width: 270px;
+
     height: 100vh;
 
     border-right: 4px solid rgb(39, 39, 39);
 
     display: flex;
-    flex-direction: column;
 
+    flex-direction: column;
+    
     align-items: center;
 
     background-color: black;
+
+    background: rgba(0,0,0,0.7);
+
+    backdrop-filter: blur(10px);
+
     font-weight: bold;
 }
 
-.navbar_esquerda li{
-    list-style: none; /* tira os "•" do itens (Home / Login / Cadastro) */
-}
-
-.navbar_esquerda a{
-    color: gray; /* cor da fonte */
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.titulo_superior{
-    margin-left: 100px; /* faz um "espaçamento" de tudo que está na esquerda do titulo */
-    font-size: 37px; /* tamanho da fonte */
-}
-
 .navbar_esquerda img{
+
     height: 140px;
+
     margin: 20px;
 }
 
+.navbar_esquerda li{
+
+    list-style: none;
+}
+
+.navbar_esquerda a{
+
+    color: gray;
+
+    font-size: 22px;
+
+    text-decoration: none;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar_esquerda a:hover{
+
+    background-color: gray;
+
+    color: white;
+
+    transition: 0.5s;
+
+    border-radius: 8px;
+
+    padding: 15px;
+}
+
 .itens_navbar_esquerda{
+
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -48,102 +94,156 @@ body{
     gap: 50px;
 
     margin-top: auto;
+
     margin-bottom: auto;
 }
 
-.navbar_esquerda a{
-    color: gray;
-    font-size: 22px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ========================= */
+/*      PAINEL DASHBOARD     */
+/* ========================= */
+
+.painel_dashboard{
+
+    width: 95%;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
 }
 
-.navbar_esquerda a:hover{
-    background-color: gray;
-    color: white;
-    transition: 0.5s;
-    border-radius: 8px;
-    padding: 15px;
-}
-
-.pagina_dash{
-    background-color: rgb(42, 42, 42);
-}
-
-.pagina_dash{
-    background-color: rgb(42, 42, 42);
-
-    display: flex;
-}
+/* ========================= */
+/*      CONTEÚDO DASH        */
+/* ========================= */
 
 .conteudo_dashboard{
-    padding: 40px;
-    color: white;
+
     width: 100%;
+
+    padding: 40px;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
+    color: white;
 }
 
+/* ========================= */
+/*         TÍTULOS           */
+/* ========================= */
+
 .titulo_dash{
+
     font-size: 50px;
+
     margin-top: 1px;
 }
 
-.KPI{
-    display: flex;
-    gap: 40px;
-    margin-top: 40px;
+/* ========================= */
+/*            KPI            */
+/* ========================= */
 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.KPI{
+
     width: 100%;
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 30px;
 }
 
 .KPI_ajuste{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
+
     width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
 }
 
 .KPI1_dash,
 .KPI2_dash,
 .KPI3_dash{
-    background-color: rgb(75, 75, 75);
-    border-radius: 8px;
-    padding: 15px;
+
     width: 220px;
+
     height: 120px;
 
+    padding: 15px;
+
     display: flex;
-    justify-content: center;
+
     flex-direction: column;
 
-    text-align: center;
     justify-content: space-between;
- 
+
+    text-align: center;
+
+    background-color: rgb(75, 75, 75);
+
+    border-radius: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
     font-size: 20px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.KPI1_dash{
+
+    border-left: 6px solid blue;
+}
+
+.KPI2_dash{
+
+    border-left: 6px solid yellow;
+}
+
+.KPI3_dash{
+
+    border-left: 6px solid red;
 }
 
 .KPI span{
+
     display: flex;
+
     justify-content: center;
+
     font-size: 30px;
+
     font-weight: bold;
 }
 
-.grafico_de_barras{
+/* ========================= */
+/*         GRÁFICOS          */
+/* ========================= */
+
+.grafico_de_barras1,
+.grafico_de_barras2{
+
+    width: 1000px;
+
+    height: 320px;
+
     background-color: rgb(75, 75, 75);
+
     border-radius: 8px;
-
-    width: 100%;
-    height: 100%;
-}
-
-#graficoBarras {
-    width: 30px;
-    height: 350px;
 }

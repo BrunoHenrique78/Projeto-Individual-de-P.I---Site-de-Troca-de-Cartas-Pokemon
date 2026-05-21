@@ -30,13 +30,17 @@
 
     <div class="itens_navbar_esquerda">
 
-      <li>
-        <a href="cadastro_carta">Álbum de Cartas</a>
-      </li>
+        <li>
+            <a href="dashboard.html">Estatística</a>
+        </li>
 
-      <li>
-        <a href="agora">Estatística</a>
-      </li>
+        <li>
+            <a href="cadastro_carta.html">Registro de Cartas</a>
+        </li>
+
+        <li>
+            <a href="album_carta.html">Álbum de Cartas</a>
+        </li>
 
     </div>
 
@@ -46,47 +50,43 @@
 
     <h1 class="titulo_dash">Bem-vindo Usuário!</h1>
 
-    <div class="KPI">
-        <div class="KPI_ajuste">
-            <div class="KPI1_dash">
-                Total de Cartas Registradas:
+    <div class="painel_dashboard">
 
-                <p></p>
+        <div class="KPI">
 
-                <span>0 Carta(/s)</span>
+            <div class="KPI_ajuste">
 
-            </div>
+                <div class="KPI1_dash">
+                    Total de Cartas Registradas:
+                    <p></p>
+                    <span>0 Carta(/s)</span>
+                </div>
 
-            <div class="KPI2_dash">
-                Total de Cartas Shiny:
+                <div class="KPI2_dash">
+                    Total de Cartas Shiny:
+                    <p></p>
+                    <span>0 Shiny(/s)</span>
+                </div>
 
-                <p></p>
-
-                <span>0 Shiny(/s)</span>
-
-            </div>
-
-            <div class="KPI3_dash">
-                Total de Cartas com Mega Evolução:
-
-                <p></p>
-
-                <span>0 Mega(/s)</span>
+                <div class="KPI3_dash">
+                    Total de Cartas com Mega Evolução:
+                    <p></p>
+                    <span>0 Mega(/s)</span>
+                </div>
 
             </div>
-        </div>
 
-        <div class="grafico_de_barras">
-            <canvas id="graficoBarras"></canvas>
+            <div class="grafico_de_barras1">
+                <canvas id="graficoBarras1"></canvas>
+            </div>
+
+            <div class="grafico_de_barras2">
+                <canvas id="graficoBarras2"></canvas>
+            </div>
+
         </div>
 
     </div>
-
-</div>
-
-        <div class="grafico_de_pizza">
-            <canvas id="graficoPizza"></canvas>
-        </div>
 
 </div>
 
@@ -97,7 +97,7 @@
 
 <script>
 
-new Chart(document.getElementById('graficoBarras'), {
+new Chart(document.getElementById('graficoBarras1'), {
     type: 'bar',
     data: {
         labels: ['Planta', 'Fogo', 'Água', 'Elétrico', 'Psíquico', 'Lutador', 'Escuridão', 'Metal', 'Dragão', 'Normal', 'Fada(Antigo)'],
@@ -158,22 +158,63 @@ new Chart(document.getElementById('graficoBarras'), {
     }
 });
 
-new Chart(document.getElementById('graficoPizza'), {
-    type: 'pie',
-
+new Chart(document.getElementById('graficoBarras2'), {
+    type: 'bar',
     data: {
-        labels: ['Planta', 'Fogo', 'Água', 'Elétrico'],
-
+        labels: ['Pokémon', 'Item', 'Energia', 'Treinador'],
         datasets: [{
             data: [10, 20, 30, 15],
-
             backgroundColor: [
-                'green',
-                'red',
-                'blue',
-                'yellow'
+                'yellow', 'orange', 'blue', 'red'
             ]
         }]
+    },
+
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+
+        plugins: {
+            title: {
+                display: true,
+                text: 'Tipos de Cartas Cadastradas',
+                color: 'white',
+                font: {
+                    size: 22,
+                    weight: 'normal',
+                    family: 'Arial'
+                }
+            },
+
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+            x: {
+                ticks: {
+                    color: 'white',
+                    font: {
+                        size: 14
+                    }
+                },
+                grid: {
+                    color: 'gray'
+                }
+            },
+            y: {
+                ticks: {
+                    color: 'white',
+                    font: {
+                        size: 14
+                    }
+                },
+                grid: {
+                    color: 'gray'
+                }
+            }
+        }
     }
 });
 

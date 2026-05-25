@@ -1,249 +1,214 @@
-/* ========================= */
-/*           BODY            */
-/* ========================= */
-
-body{
-
-    margin: 0;
+*{
+    margin:0;
 }
 
-
-
-/* ========================= */
-/*      PÁGINA DASHBOARD     */
-/* ========================= */
-
-.pagina_dash{
+body{
+    font-family: Arial, Helvetica, sans-serif;
 
     background: linear-gradient(135deg ,rgb(39, 39, 39), rgb(51, 51, 51), rgb(100, 100, 100));
 
-    display: flex;
+    color: white;
 }
 
-/* ========================= */
-/*          NAVBAR           */
-/* ========================= */
+/* ================================= */
+/* DASH */
+/* ================================= */
+
+.pagina_dash{
+    display:flex;
+    min-height:100%;
+}
+
+/* ================================= */
+/* NAVBAR */
+/* ================================= */
 
 .navbar_esquerda{
 
-    width: 270px;
+    width:260px;
 
-    height: 100vh;
+    background:rgba(0,0,0,0.75);
 
-    border-right: 4px solid rgb(39, 39, 39);
+    backdrop-filter:blur(12px);
 
-    display: flex;
+    border-right:1px solid rgba(255,255,255,0.05);
 
-    flex-direction: column;
-    
-    align-items: center;
-
-    background-color: black;
-
-    background: rgba(0,0,0,0.7);
-
-    backdrop-filter: blur(10px);
-
-    font-weight: bold;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .navbar_esquerda img{
 
-    height: 140px;
+    width:140px;
 
-    margin: 20px;
-}
-
-.navbar_esquerda li{
-
-    list-style: none;
-}
-
-.navbar_esquerda a{
-
-    color: gray;
-
-    font-size: 22px;
-
-    text-decoration: none;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.navbar_esquerda a:hover{
-
-    background-color: gray;
-
-    color: white;
-
-    transition: 0.5s;
-
-    border-radius: 8px;
-
-    padding: 15px;
+    margin-bottom:60px;
 }
 
 .itens_navbar_esquerda{
 
-    display: flex;
+    width:100%;
 
-    flex-direction: column;
+    display:flex;
+    flex-direction:column;
 
-    align-items: center;
-
-    gap: 50px;
-
-    margin-top: auto;
-
-    margin-bottom: auto;
+    gap:10px;
 }
 
-/* ========================= */
-/*      PAINEL DASHBOARD     */
-/* ========================= */
-
-.painel_dashboard{
-
-    width: 95%;
-
-    padding: 30px;
-
-    background: rgba(0, 0, 0, 0.25);
-
-    border-radius: 25px;
-
-    backdrop-filter: blur(6px);
-
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+.itens_navbar_esquerda li{
+    list-style:none;
 }
 
-/* ========================= */
-/*      CONTEÚDO DASH        */
-/* ========================= */
+.itens_navbar_esquerda a{
+
+    display:flex;
+    align-items:center;
+
+    padding:16px 16px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:gray;
+
+    transition:0.3s;
+}
+
+.itens_navbar_esquerda a:hover{
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    transform:translateX(5px);
+}
+
+/* ================================= */
+/* CONTEÚDO */
+/* ================================= */
 
 .conteudo_dashboard{
 
-    width: 100%;
+    width:100%;
 
-    padding: 40px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    color: white;
+    padding:35px;
 }
-
-/* ========================= */
-/*         TÍTULOS           */
-/* ========================= */
 
 .titulo_dash{
 
-    font-size: 50px;
+    font-size:38px;
 
-    margin-top: 1px;
+    margin-bottom:30px;
 }
 
-/* ========================= */
-/*            KPI            */
-/* ========================= */
+/* ================================= */
+/* PAINEL */
+/* ================================= */
+
+.painel_dashboard{
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* ================================= */
+/* KPI */
+/* ================================= */
 
 .KPI{
 
-    width: 100%;
+    display:flex;
+    flex-direction:column;
 
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 30px;
-
-    margin-top: 30px;
+    gap:30px;
 }
 
 .KPI_ajuste{
 
-    width: 100%;
+    display:flex;
 
-    display: flex;
-
-    justify-content: center;
-
-    gap: 30px;
+    gap:25px;
 }
 
 .KPI1_dash,
 .KPI2_dash,
 .KPI3_dash{
 
-    width: 220px;
+    width:250px;
 
-    height: 120px;
+    background:linear-gradient(
+        145deg,
+        rgb(75,75,75),
+        rgb(45,45,45)
+    );
 
-    padding: 15px;
+    border-radius:24px;
 
-    display: flex;
+    padding:25px;
 
-    flex-direction: column;
+    height:150px;
 
-    justify-content: space-between;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 
-    text-align: center;
+    border:1px solid rgba(255,255,255,0.05);
 
-    background-color: rgb(75, 75, 75);
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
 
-    border-radius: 20px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 20px;
-
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    transition:0.3s;
 }
 
-.KPI1_dash{
+.KPI1_dash:hover,
+.KPI2_dash:hover,
+.KPI3_dash:hover{
 
-    border-left: 6px solid white;
+    transform:translateY(-5px);
 }
 
-.KPI2_dash{
+.KPI1_dash span,
+.KPI2_dash span,
+.KPI3_dash span{
 
-    border-left: 6px solid grey;
+    margin-top:15px;
+
+    font-size:34px;
+
+    font-weight:700;
 }
 
-.KPI3_dash{
-
-    border-left: 6px solid white;
-}
-
-.KPI span{
-
-    display: flex;
-
-    justify-content: center;
-
-    font-size: 30px;
-
-    font-weight: bold;
-}
-
-/* ========================= */
-/*         GRÁFICOS          */
-/* ========================= */
+/* ================================= */
+/* GRÁFICOS */
+/* ================================= */
 
 .grafico_de_barras1,
 .grafico_de_barras2{
 
-    width: 1000px;
+    background:linear-gradient(135deg,rgb(75,75,75),rgb(45,45,45));
 
-    height: 320px;
+    border-radius:24px;
 
-    background-color: rgb(75, 75, 75);
+    padding:25px;
 
-    border-radius: 8px;
+    border:1px solid rgba(255,255,255,0.05);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.grafico_de_barras1 canvas,
+.grafico_de_barras2 canvas{
+
+    width:100%;
+
+    height:320px;
 }

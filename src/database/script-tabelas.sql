@@ -15,3 +15,13 @@ CREATE TABLE usuario (
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL
 ) 	AUTO_INCREMENT = 1000;
+
+CREATE TABLE cartas_salvas (
+    id_carta INT PRIMARY KEY AUTO_INCREMENT,
+    fk_usuario_id INT,
+    carta_id VARCHAR(50),
+    carta_nome VARCHAR(100),
+    carta_imagem VARCHAR(255),
+    data_adicao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (fk_usuario_id) REFERENCES usuario(id_usuario)
+);

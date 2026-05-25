@@ -48,7 +48,7 @@
 
                 <div class="painel_cadastro_carta">
 
-                    <div class="barra_pesquisa">
+                    <div class="barra_pesquisa"></div>
 
                     <div id="div_resultado"></div>
 
@@ -63,12 +63,20 @@
 </html>
 <script>
 
-let id = localStorage.getItem("carta_id");
-
-fetch(`https://api.pokemontcg.io/v2/cards/${id}`)
+fetch(`/cartas/listar/${sessionStorage.ID_USUARIO}`)
 .then(res => res.json())
-.then(json => {
+.then(cartas => {
 
-    div_resultado.innerHTML = `<img src="${json.data.images.small}">`;
+    div_resultado.innerHTML = "";
+
+    cartas.forEach(carta => {
+        div_resultado.innerHTML += `
+            <div class="card_carta">
+                <img src="${carta.carta_imagem}">
+            </div>
+        `;
+    });
 
 });
+
+</script>

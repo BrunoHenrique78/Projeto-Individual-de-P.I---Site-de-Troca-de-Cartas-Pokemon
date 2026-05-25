@@ -71,7 +71,7 @@
 </html>
 <script>
 
-let cartaSelecionada = "";
+let cartaSelecionada = {};
 
 function pesquisar(){
 
@@ -87,14 +87,11 @@ div_resultado.innerHTML = "";
 
             for(let i = 0; i < json.data.length; i++){
 
-                div_resultado.innerHTML += `<div class="card_carta" onclick="cartaSelecionada='${json.data[i].id}'; this.style.border='3px solid white'">
-                                            
+                div_resultado.innerHTML += `<div class="card_carta" onclick='selecionarCarta("${json.data[i].id}", "${json.data[i].name}", "${json.data[i].images.small}", "${json.data[i].types?.[0] || "desconhecido"}", "${json.data[i].supertype}"); this.style.transform="scale(1.1)"''>
+
                                             <img src="${json.data[i].images.small}">
-                                            
-                                            <br>
 
                                             </div>
-                
                                             `;
             }
 
@@ -102,18 +99,46 @@ div_resultado.innerHTML = "";
 
     }
 
-function adicionar(){
+function selecionarCarta(id, nome, imagem, tipo, categoria){
 
-    if(cartaSelecionada == ""){
-        alert("Selecione uma carta primeiro!");
+    cartaSelecionada = { id, nome, imagem, tipo, categoria};
+}
+    
+function adicionar() {
+
+    if (!cartaSelecionada.id) {
+        alert("Selecione uma carta!");
         return;
     }
 
-    alert("Carta selecionada: " + cartaSelecionada);
+    fetch("/cartas/salvar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
 
-    localStorage.setItem("carta_id", cartaSelecionada);
+        body: JSON.stringify({
+            fkUsuario: sessionStorage.ID_USUARIO,
 
-    window.location = "album_carta.html";
+            cartaId: cartaSelecionada.id,
+            cartaNome: cartaSelecionada.nome,
+            cartaImagem: cartaSelecionada.imagem,
+            tipo: cartaSelecionada.tipo,
+            categoria: cartaSelecionada.categoria,
+            shiny: 0,
+            mega: 0
+        })
+    })
+
+    .then(res => res.json())
+    .then(data => {
+        alert("Carta salva!");
+        window.location = "album_carta.html";
+    })
+    .catch(erro => {
+        console.log(erro);
+    });
+
 }
 
 </script>

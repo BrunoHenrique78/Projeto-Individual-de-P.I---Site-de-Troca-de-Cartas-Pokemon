@@ -87,7 +87,7 @@ div_resultado.innerHTML = "";
 
             for(let i = 0; i < json.data.length; i++){
 
-                div_resultado.innerHTML += `<div class="card_carta" onclick='selecionarCarta("${json.data[i].id}", "${json.data[i].name}", "${json.data[i].images.small}", "${json.data[i].types?.[0] || "desconhecido"}", "${json.data[i].supertype}"); this.style.transform="scale(1.1)"''>
+                div_resultado.innerHTML += `<div class="card_carta" onclick='selecionarCarta("${json.data[i].id}", "${json.data[i].name}", "${json.data[i].images.small}", "${json.data[i].types?.[0] || "desconhecido"}", "${json.data[i].supertype}", "${json.data[i].rarity || "Comum"}")'; this.style.transform="scale(1.1)"''>
 
                                             <img src="${json.data[i].images.small}">
 
@@ -99,9 +99,9 @@ div_resultado.innerHTML = "";
 
     }
 
-function selecionarCarta(id, nome, imagem, tipo, categoria){
+function selecionarCarta(id, nome, imagem, tipo, categoria, raridade){
 
-    cartaSelecionada = { id, nome, imagem, tipo, categoria};
+        cartaSelecionada = {id, nome, imagem, tipo, categoria, raridade};
 }
     
 function adicionar() {

@@ -52,7 +52,7 @@
 
 <div class="conteudo_dashboard">
 
-    <h1 class="titulo_dash">Bem-vindo Usuário!</h1>
+    <h1 class="titulo_dash" id="titulo">Bem-vindo!</h1>
 
     <div class="painel_dashboard">
 
@@ -101,6 +101,10 @@
 
 <script>
 
+let nome = sessionStorage.NOME_USUARIO;
+
+document.getElementById("titulo").innerHTML = `Bem-vindo ${nome}!`;
+
 fetch("/cartas/total-cartas")
   .then(res => res.json())
   .then(data => {
@@ -108,10 +112,10 @@ fetch("/cartas/total-cartas")
 });    
 
 fetch(`/cartas/ultima-carta/${sessionStorage.ID_USUARIO}`)
-  .then(res => res.json())
-  .then(data => {
-      document.getElementById("kpi_ultima span").innerHTML = `${data[0].ultima}`;
-  });
+.then(res => res.json())
+.then(resultado => {
+    document.getElementById("kpi_ultima").innerHTML = `${resultado[0].ultima ?? '--/--/---- --:--'}`;
+});
 
 fetch(`/cartas/cartas-repetidas/${sessionStorage.ID_USUARIO}`)
   .then(res => res.json())
@@ -140,7 +144,7 @@ fetch("/cartas/tipos-cartas")
 
   let graficoCategoria;
 
-fetch("/cartas/categorias-cartas")
+fetch("/cartas/raridade-cartas")
   .then(res => res.json())
   .then(dados => {
 

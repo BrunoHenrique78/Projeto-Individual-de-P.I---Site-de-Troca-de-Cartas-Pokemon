@@ -29,4 +29,8 @@ router.get("/cartas-repetidas/:idUsuario", function (req, res) {
     cartasController.cartasRepetidas(req, res);
 });
 
+router.get("/raridade-cartas", function (req, res) {
+    cartasController.raridadeCartas(req, res);
+});
+
 module.exports = router;

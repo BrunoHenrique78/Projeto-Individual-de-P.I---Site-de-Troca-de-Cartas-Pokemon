@@ -142,29 +142,24 @@ fetch("/cartas/tipos-cartas")
 
   });
 
-  let graficoCategoria;
-
 fetch("/cartas/raridade-cartas")
   .then(res => res.json())
   .then(dados => {
 
-      const labels = dados.map(i => i.carta_categoria);
+      const labels = dados.map(i => i.carta_raridade);
       const valores = dados.map(i => i.quantidade);
 
-      if (graficoCategoria) graficoCategoria.destroy();
+      new Chart(document.getElementById("graficoBarras2"), {
+          type: "pie",
 
-      graficoCategoria = new Chart(
-          document.getElementById("graficoBarras2"),
-          {
-              type: "bar",
-              data: {
-                  labels,
-                  datasets: [{
-                      data: valores
-                  }]
-              }
+          data: {
+              labels: labels,
+
+              datasets: [{
+                  data: valores
+              }]
           }
-      );
+      });
 
   });
 </script>

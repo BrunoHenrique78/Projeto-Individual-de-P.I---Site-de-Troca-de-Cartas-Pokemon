@@ -1,9 +1,9 @@
 var database = require("../database/config");
 
-function salvar(fkUsuario, cartaId, cartaNome, cartaImagem, tipo, categoria, shiny, mega) {
+function salvar(fkUsuario, cartaId, cartaNome, cartaImagem, tipo, categoria, raridade) {
 
-    var instrucaoSql = `INSERT INTO cartas_salvas(fk_usuario_id, carta_id, carta_nome, carta_imagem, carta_tipo, carta_categoria, carta_shiny, carta_mega)
-                        VALUES(${fkUsuario}, '${cartaId}', '${cartaNome}', '${cartaImagem}', '${tipo}', '${categoria}', ${shiny}, ${mega});
+    var instrucaoSql = `INSERT INTO cartas_salvas(fk_usuario_id, carta_id, carta_nome, carta_imagem, carta_tipo, carta_categoria, carta_raridade)
+                        VALUES(${fkUsuario}, '${cartaId}', '${cartaNome}', '${cartaImagem}', '${tipo}', '${categoria}', '${raridade}');
                        `;
 
     return database.executar(instrucaoSql);
@@ -64,6 +64,16 @@ function cartasRepetidas(idUsuario) {
     `);
 }
 
+function raridadeCartas() {
+
+    return database.executar(`
+        SELECT carta_raridade, COUNT(*) AS quantidade
+        FROM cartas_salvas
+        GROUP BY carta_raridade;
+    `);
+
+}
+
 module.exports = {
-    salvar, contarTotalCartas, contarPorTipo, contarPorCategoria, listar, ultimaCarta, cartasRepetidas
+    salvar, contarTotalCartas, contarPorTipo, contarPorCategoria, listar, ultimaCarta, cartasRepetidas, raridadeCartas
 };

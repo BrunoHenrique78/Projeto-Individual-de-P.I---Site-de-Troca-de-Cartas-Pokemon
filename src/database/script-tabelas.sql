@@ -9,9 +9,6 @@ comandos para mysql server
 create database pokeswap;
 use pokeswap;
 
-create database pokeswap;
-use pokeswap;
-
 CREATE TABLE usuario (
     id_usuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
@@ -26,8 +23,7 @@ CREATE TABLE cartas_salvas (
     carta_nome VARCHAR(100),
     carta_tipo VARCHAR(50),
     carta_categoria VARCHAR(50),
-    carta_shiny BOOLEAN DEFAULT FALSE,
-    carta_mega BOOLEAN DEFAULT FALSE,
+    carta_raridade VARCHAR(50),
     carta_imagem VARCHAR(255),
     data_adicao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (fk_usuario_id) REFERENCES usuario(id_usuario)

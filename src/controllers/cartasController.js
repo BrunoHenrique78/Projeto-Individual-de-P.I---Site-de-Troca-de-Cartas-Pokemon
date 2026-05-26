@@ -8,10 +8,10 @@ function salvar(req, res) {
     var cartaImagem = req.body.cartaImagem;
     var tipo = req.body.tipo ?? "desconhecido";
     var categoria = req.body.categoria ?? "desconhecido";
-    var shiny = Number(req.body.shiny ?? 0);
-    var mega = Number(req.body.mega ?? 0);
+    var raridade = req.body.raridade;
 
-    cartasModel.salvar(fkUsuario, cartaId, cartaNome, cartaImagem, tipo, categoria, shiny, mega)
+
+    cartasModel.salvar(fkUsuario, cartaId, cartaNome, cartaImagem, tipo, categoria, raridade)
 
         .then(function (resultado) {
             res.json(resultado);
@@ -65,7 +65,15 @@ function cartasRepetidas(req, res) {
         .catch(erro => res.status(500).json(erro));
 }
 
+function raridadeCartas(req, res) {
+
+    cartasModel.raridadeCartas()
+        .then(resultado => res.json(resultado))
+        .catch(erro => res.status(500).json(erro));
+
+}
+
 module.exports = {
-    salvar, totalCartas, tiposCartas, categoriasCartas, listar, ultimaCarta, cartasRepetidas
+    salvar, totalCartas, tiposCartas, categoriasCartas, listar, ultimaCarta, cartasRepetidas, raridadeCartas
 };
 

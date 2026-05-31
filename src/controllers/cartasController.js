@@ -1,14 +1,14 @@
-var cartasModel = require("../models/cartasModel");
+let cartasModel = require("../models/cartasModel");
 
 function salvar(req, res) {
 
-    var fkUsuario = req.body.fkUsuario;
-    var cartaId = req.body.cartaId;
-    var cartaNome = req.body.cartaNome;
-    var cartaImagem = req.body.cartaImagem;
-    var tipo = req.body.tipo ?? "desconhecido";
-    var categoria = req.body.categoria ?? "desconhecido";
-    var raridade = req.body.raridade;
+    let fkUsuario = req.body.fkUsuario;
+    let cartaId = req.body.cartaId;
+    let cartaNome = req.body.cartaNome;
+    let cartaImagem = req.body.cartaImagem;
+    let tipo = req.body.tipo ?? "desconhecido";
+    let categoria = req.body.categoria ?? "desconhecido";
+    let raridade = req.body.raridade;
 
 
     cartasModel.salvar(fkUsuario, cartaId, cartaNome, cartaImagem, tipo, categoria, raridade)
@@ -24,25 +24,34 @@ function salvar(req, res) {
 }
 
 function totalCartas(req, res) {
-    cartasModel.contarTotalCartas()
+
+    let idUsuario = req.params.idUsuario;
+
+    cartasModel.contarTotalCartas(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => res.status(500).json(erro));
 }
 
 function tiposCartas(req, res) {
-    cartasModel.contarPorTipo()
+
+    let idUsuario = req.params.idUsuario;
+
+    cartasModel.contarPorTipo(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => res.status(500).json(erro));
+
 }
 
 function categoriasCartas(req, res) {
-    cartasModel.contarPorCategoria()
+    let idUsuario = req.params.idUsuario;
+
+    cartasModel.contarPorCategoria(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => res.status(500).json(erro));
 }
 
 function listar(req, res) {
-    var idUsuario = req.params.idUsuario;
+    let idUsuario = req.params.idUsuario;
 
     cartasModel.listar(idUsuario)
         .then(resultado => res.json(resultado))
@@ -50,7 +59,7 @@ function listar(req, res) {
 }
 
 function ultimaCarta(req, res) {
-    var idUsuario = req.params.idUsuario;
+    let idUsuario = req.params.idUsuario;
 
     cartasModel.ultimaCarta(idUsuario)
         .then(resultado => res.json(resultado))
@@ -58,7 +67,7 @@ function ultimaCarta(req, res) {
 }
 
 function cartasRepetidas(req, res) {
-    var idUsuario = req.params.idUsuario;
+    let idUsuario = req.params.idUsuario;
 
     cartasModel.cartasRepetidas(idUsuario)
         .then(resultado => res.json(resultado))
@@ -67,13 +76,71 @@ function cartasRepetidas(req, res) {
 
 function raridadeCartas(req, res) {
 
-    cartasModel.raridadeCartas()
+    let idUsuario = req.params.idUsuario;
+
+    cartasModel.raridadeCartas(idUsuario)
         .then(resultado => res.json(resultado))
         .catch(erro => res.status(500).json(erro));
 
 }
 
+function atualizarDescricao(req, res) {
+
+    let idCarta = req.params.idCarta;
+    let descricao = req.params.descricao;
+
+    cartasModel.atualizarDescricao(idCarta, descricao)
+        .then(resposta => res.json(resposta))
+        .catch(erro => res.status(500).json(erro));
+}
+
+function publicar(req, res) {
+    let idCarta = req.params.idCarta;
+    let idUsuario = req.params.idUsuario;
+    let descricao = req.body.descricao;
+
+    cartasModel.publicarCarta(idCarta, idUsuario, descricao)
+        .then(resposta => res.json(resposta))
+        .catch(erro => res.status(500).json(erro));
+}
+
+function listarGerais(req, res) {
+    cartasModel.listarGerais()
+        .then(resposta => res.json(resposta))
+        .catch(erro => res.status(500).json(erro));
+}
+
+function listarMensagens(req, res) {
+
+    let idCarta = req.params.idCarta;
+
+    cartasModel.listarMensagens(idCarta)
+        .then(resultado => {
+            res.json(resultado);
+        })
+        .catch(erro => {
+            res.status(500).json(erro);
+        });
+
+}
+
+function enviarMensagem(req, res) {
+
+    let idCarta = req.params.idCarta;
+    let idUsuario = req.body.idUsuario;
+    let mensagem = req.body.mensagem;
+
+    cartasModel.enviarMensagem(idCarta, idUsuario, mensagem)
+        .then(resultado => {
+            res.json(resultado);
+        })
+        .catch(erro => {
+            res.status(500).json(erro);
+        });
+
+}
+
 module.exports = {
-    salvar, totalCartas, tiposCartas, categoriasCartas, listar, ultimaCarta, cartasRepetidas, raridadeCartas
+    salvar, totalCartas, tiposCartas, categoriasCartas, listar, ultimaCarta, cartasRepetidas, raridadeCartas, atualizarDescricao, publicar, listarGerais, listarMensagens, enviarMensagem
 };
 

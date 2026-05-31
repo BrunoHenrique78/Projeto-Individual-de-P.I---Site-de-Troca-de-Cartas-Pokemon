@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeSwap | Cartas</title>
+    <title>PokeSwap | Cartas Gerais</title>
 
     
     <link rel="stylesheet" href="./../css/estilo_cadastro_carta.css">
@@ -38,17 +38,21 @@
                     <a href="album_carta.html">🃏 Álbum de Cartas</a>
                 </li>
 
+                <li>
+                    <a href="cartas_geral.html">💱 Cartas Gerais</a>
+                </li>
+
             </div>
 
         </div>
 
         <div class="conteudo_cadastro_carta">
 
-            <h1 class="titulo_cadastro_carta">Bem-vindo ao seu Albúm de Cartas Pokémon!</h1>
+            <h1 class="titulo_cadastro_carta">Bem-vindo à Área de Cartas Gerais</h1>
 
                 <div class="painel_cadastro_carta">
 
-                    <div class="barra_pesquisa">
+                    <div class="cartas">
 
                     <div id="div_resultado"></div>
 
@@ -58,6 +62,137 @@
 
     </div>
 
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+    <span onclick="fecharModal()" class="fechar-modal">❌</span>
+
+    <div class="modal-conteudo">
+
+        <!-- LADO ESQUERDO: INFO -->
+        <div class="modal-info">
+            <img id="modal-img">
+            <h2 id="modal-nome"></h2>
+            <p id="modal-tipo"></p>
+            <p id="modal-categoria"></p>
+            <p id="modal-raridade"></p>
+
+            <p id="modal-usuario"></p>
+            <p id="modal-local"></p>
+            <p id="modal-descricao"></p>
+        </div>
+
+        <!-- BARRA -->
+        <div class="barra-divisoria"></div>
+
+        <!-- LADO DIREITO: FÓRUM -->
+        <div class="modal-forum">
+
+            <div id="lista-mensagens"></div>
+
+            <div class="input-forum">
+                <input id="ipt_msg" placeholder="Escreva sua mensagem...">
+                <button onclick="enviarMsg()">Enviar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
 
 </body>
 </html>
+<script>
+
+let cartaSelecionada = null;
+
+function carregarCartas() {
+
+    fetch("/cartas/gerais")
+    .then(r => r.json())
+    .then(cartas => {
+
+        const div = document.getElementById("div_resultado");
+        div.innerHTML = "";
+
+        cartas.forEach(c => {
+            div.innerHTML += `
+                <div class="card_carta" onclick="abrirModal('${c.id_publicacao}', '${c.carta_nome}', '${c.carta_imagem}', '${c.carta_tipo}', '${c.carta_categoria}', '${c.carta_raridade}', '${c.descricao}', '${c.nome}', '${c.pais}', '${c.estado}')">
+                    <img src="${c.carta_imagem}">
+                </div>
+            `;
+        });
+
+    });
+
+}
+
+function abrirModal(idPublicacao, nome, imagem, tipo, categoria, raridade, descricao, usuario, pais, estado) {
+
+    cartaSelecionada = idPublicacao;
+
+    carregarMensagens();
+
+    document.getElementById("modal").classList.add("ativo");
+
+    document.getElementById("modal-nome").innerHTML = nome;
+    document.getElementById("modal-img").src = imagem;
+    document.getElementById("modal-tipo").innerHTML = "Tipo: " + tipo;
+    document.getElementById("modal-categoria").innerHTML = "Categoria: " + categoria;
+    document.getElementById("modal-raridade").innerHTML = "Raridade: " + raridade;
+    document.getElementById("modal-descricao").innerHTML = descricao;
+    document.getElementById("modal-usuario").innerHTML = "Vendedor: " + usuario;
+    document.getElementById("modal-local").innerHTML = pais + " - " + estado;
+}
+
+function fecharModal() {
+    document.getElementById("modal").classList.remove("ativo");
+}
+
+function enviarMsg() {
+
+    fetch(`/cartas/forum/${cartaSelecionada}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuario: sessionStorage.ID_USUARIO,
+            mensagem: document.getElementById("ipt_msg").value
+        })
+    })
+    .then(() => {
+        document.getElementById("ipt_msg").value = "";
+        carregarMensagens();
+    });
+
+}
+
+function carregarMensagens() {
+
+    fetch(`/cartas/forum/${cartaSelecionada}`)
+    .then(r => r.json())
+    .then(msgs => {
+
+        console.log(msgs);
+
+        let div = document.getElementById("lista-mensagens");
+        div.innerHTML = "";
+
+        msgs.forEach(m => {
+            div.innerHTML += `<p><b>${m.nome}:</b> ${m.mensagem}</p>`;
+        });
+
+    });
+
+}
+
+carregarCartas();
+
+
+</script>

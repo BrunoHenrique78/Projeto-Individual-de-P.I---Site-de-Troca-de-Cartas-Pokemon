@@ -151,6 +151,10 @@ body{
 
 .barra_pesquisa{
 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     width: 100%;
 
     display: flex;
@@ -219,4 +223,120 @@ body{
     justify-content: center;
 
     margin-top: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modal-box {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#area-input input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgb(70,70,70);
+    color: white;
+}
+
+.modal button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.fechar-modal {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#ipt_descricao {
+    width: 90%;
+    height: 120px;
+
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+
+    background: rgb(70,70,70);
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-conteudo {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-info {
+    flex: 1;
+}
+
+.modal-forum {
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+}
+
+.barra-divisoria {
+    width: 2px;
+    background: #ccc;
+}
+
+.input-forum {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.input-forum input {
+    padding: 8px;
+}
+
+.input-forum button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.modal-conteudo {
+    display: flex;
+    gap: 15px;
+}
+
+#lista-mensagens{
+    display: flex;
+    min-height:300px;
+    background:#2f2f2f;
+    border-radius:10px;
+    padding:15px;
+    overflow-y:auto;
 }

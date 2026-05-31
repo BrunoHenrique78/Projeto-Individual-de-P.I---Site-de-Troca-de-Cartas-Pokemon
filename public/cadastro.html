@@ -59,6 +59,16 @@
             <input id="confirmacao_senha_input" type="password" placeholder="******" />
           </div>
 
+          <div class="info">
+            <span>País:</span>
+            <input id="pais_input" type="text" placeholder="Brasil" />
+          </div>
+
+          <div class="info">
+            <span>Estado:</span>
+            <input id="estado_input" type="text" placeholder="São Paulo" />
+          </div>
+
           <p></p>
 
           <button class="botao" onclick="cadastrar()">Registrar</button>
@@ -103,6 +113,8 @@
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var paisVar = pais_input.value;
+    var estadoVar = estado_input.value;
 
 
     // Verificando se há algum campo em branco
@@ -110,7 +122,9 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == ""
+      confirmacaoSenhaVar == "" ||
+      paisVar == "" ||
+      estadoVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -133,7 +147,9 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        senhaServer: senhaVar
+        senhaServer: senhaVar,
+        paisServer: paisVar,
+        estadoServer: estadoVar
       }),
     })
       .then(function (resposta) {

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeSwap | Cartas</title>
+    <title>PokeSwap | Álbum de Cartas</title>
 
     
     <link rel="stylesheet" href="./../css/estilo_cadastro_carta.css">
@@ -38,6 +38,10 @@
                     <a href="album_carta.html">🃏 Álbum de Cartas</a>
                 </li>
 
+                <li>
+                    <a href="cartas_geral.html">💱 Cartas Gerais</a>
+                </li>
+
             </div>
 
         </div>
@@ -59,9 +63,39 @@
     </div>
 
 
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <span onclick="fecharModal()" class="fechar-modal">❌</span>
+
+        <div class="modal-imagem">
+            <img id="modal-img" width="200">
+        </div>
+
+        <div class="modal-info">
+            <h2 id="modal-nome"></h2>
+            <p id="modal-tipo"></p>
+            <p id="modal-raridade"></p>
+
+            <button onclick="mostrarInput()">Vender / Trocar</button>
+
+            <div id="area-input" style="display:none; margin-top:10px;">
+                <textarea id="ipt_descricao" placeholder="Descrição da carta"></textarea>
+                <button onclick="acao()">Confirmar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 </body>
 </html>
 <script>
+
+let cartaSelecionada = null;
 
 fetch(`/cartas/listar/${sessionStorage.ID_USUARIO}`)
 .then(res => res.json())
@@ -70,13 +104,52 @@ fetch(`/cartas/listar/${sessionStorage.ID_USUARIO}`)
     div_resultado.innerHTML = "";
 
     cartas.forEach(carta => {
-        div_resultado.innerHTML += `
-            <div class="card_carta">
+        div_resultado.innerHTML += `<div class="card_carta" onclick="abrirModal('${carta.id_carta}', '${carta.carta_nome}', '${carta.carta_imagem}', '${carta.carta_tipo}', '${carta.carta_raridade}')">
                 <img src="${carta.carta_imagem}">
             </div>
         `;
     });
 
 });
+
+function abrirModal(id, nome, imagem, tipo, raridade) {
+
+    cartaSelecionada = id;
+
+    document.getElementById("modal").classList.add("ativo");
+
+    document.getElementById("modal-nome").innerText = nome;
+    document.getElementById("modal-img").src = imagem;
+    document.getElementById("modal-tipo").innerText = "Tipo: " + tipo;
+    document.getElementById("modal-raridade").innerText = "Raridade: " + raridade;
+
+    document.getElementById("area-input").style.display = "none";
+}
+
+function fecharModal() {
+    document.getElementById("modal").classList.remove("ativo");
+}
+
+function mostrarInput() {
+    document.getElementById("area-input").style.display = "block";
+}
+
+function acao() {
+
+    fetch(`/cartas/publicar/${cartaSelecionada}/${sessionStorage.ID_USUARIO}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            descricao: document.getElementById("ipt_descricao").value
+        })
+    })
+    .then(() => {
+        alert("Carta publicada nas gerais!");
+        fecharModal();
+    });
+
+}
 
 </script>

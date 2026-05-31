@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeSwap | Dashboards</title>
+    <title>PokeSwap | Dashboard</title>
 
     
     <link rel="stylesheet" href="./../css/dashboards.css">
@@ -46,6 +46,10 @@
             <a href="album_carta.html">🃏 Álbum de Cartas</a>
         </li>
 
+        <li>
+            <a href="cartas_geral.html">💱 Cartas Gerais</a>
+        </li>
+
     </div>
 
   </div>
@@ -69,7 +73,7 @@
                 <div class="KPI2_dash">
                     Última carta cadastrada:
                     <p></p>
-                    <span id="kpi_ultima">--/--/---- --:--</span>
+                    <span id="kpi_ultima">Nenhuma carta cadastrada ainda!</span>
                 </div>
 
                 <div class="KPI3_dash">
@@ -80,12 +84,16 @@
 
             </div>
 
-            <div class="grafico_de_barras1">
-                <canvas id="graficoBarras1"></canvas>
-            </div>
+            <div class="graficos">
 
-            <div class="grafico_de_barras2">
-                <canvas id="graficoBarras2"></canvas>
+                <div class="grafico_de_barras1">
+                    <canvas id="graficoBarras1"></canvas>
+                </div>
+
+                <div class="grafico_de_barras2">
+                    <canvas id="graficoBarras2"></canvas>
+                </div>
+
             </div>
 
         </div>
@@ -103,48 +111,180 @@
 
 let nome = sessionStorage.NOME_USUARIO;
 
-document.getElementById("titulo").innerHTML = `Bem-vindo ${nome}!`;
+let labels = [
+    "Fire",
+    "Water",
+    "Grass",
+    "Lightning",
+    "Psychic",
+    "Fighting",
+    "Darkness",
+    "Metal",
+    "Dragon",
+    "Fairy",
+    "Colorless"
+];
 
-fetch("/cartas/total-cartas")
+let valores = [
+    0, // Fire
+    0, // Water
+    0, // Grass
+    0, // Lightning
+    0, // Psychic
+    0, // Fighting
+    0, // Darkness
+    0, // Metal
+    0, // Dragon
+    0, // Fairy
+    0  // Colorless
+];
+
+let cores = [
+    "#F08030",
+    "#6890F0",
+    "#78C850",
+    "#F8D030",
+    "#F85888",
+    "#C03028",
+    "#705848",
+    "#B8B8D0",
+    "#7038F8",
+    "#EE99AC",
+    "#98D8D8",
+    "#E0C068",
+    "#B8A038",
+    "#A040A0",
+    "#A8B820",
+    "#A890F0",
+    "#705898",
+    "#A8A878"
+];
+document.getElementById("titulo").innerHTML = `Bem-vindo, ${nome}! 👋`;
+
+fetch(`/cartas/total-cartas/${sessionStorage.ID_USUARIO}`)
   .then(res => res.json())
   .then(data => {
-      document.getElementById("kpi_total").innerHTML = `${data[0].total} Carta(s)`;
-});    
+
+let total = data[0].total;
+let texto = "Cartas";
+
+    if(total == 1 || total == 0){
+        texto = "Carta";
+    }
+
+    document.getElementById("kpi_total").innerHTML = total + " " + texto;
+    });    
 
 fetch(`/cartas/ultima-carta/${sessionStorage.ID_USUARIO}`)
 .then(res => res.json())
 .then(resultado => {
-    document.getElementById("kpi_ultima").innerHTML = `${resultado[0].ultima ?? '--/--/---- --:--'}`;
+
+    if(resultado[0].ultima){
+        let data = new Date(resultado[0].ultima);
+
+        document.getElementById("kpi_ultima").innerHTML = data.toLocaleString("pt-BR");
+    } else {
+        document.getElementById("kpi_ultima").innerHTML = "Nenhuma carta cadastrada ainda!";
+    }
+
 });
 
 fetch(`/cartas/cartas-repetidas/${sessionStorage.ID_USUARIO}`)
-  .then(res => res.json())
-  .then(data => {
-      document.getElementById("kpi_repetidas").innerHTML = `${data[0].repetidas ?? 0} Carta(s)`;
-  });
+.then(res => res.json())
+.then(dados => {
 
-fetch("/cartas/tipos-cartas")
+    let repetidas = dados[0].repetidas;
+
+    if (repetidas == null) {
+        repetidas = 0;
+    }
+
+    if (repetidas <= 1) {
+    kpi_repetidas.innerHTML = repetidas + " Carta";
+    } else {
+    kpi_repetidas.innerHTML = repetidas + " Cartas";
+}
+
+});
+
+fetch(`/cartas/tipos-cartas/${sessionStorage.ID_USUARIO}`)
+.then(res => res.json())
+.then(dados => {
+
+    if(dados.length == 0){
+        document.querySelector(".grafico_de_barras1").innerHTML = "<h2>Nenhum dado cadastrado ainda!</h2>";
+        return;
+    }
+
+    for(let i = 0; i < dados.length; i++) {
+
+        let posicao = labels.indexOf(dados[i].carta_tipo);
+
+        if(posicao != -1){
+            valores[posicao] = dados[i].quantidade;
+        }
+
+    }
+
+    new Chart(document.getElementById("graficoBarras1"), {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                data: valores,
+                backgroundColor: cores,
+                borderRadius: 12
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                },
+                title: {
+                    display: true,
+                    text: "Cartas por Tipo",
+                    color: "white",
+                    font: {
+                        size: 22
+                    }
+                }
+            },
+
+            scales: {
+                x: {
+                    ticks: {
+                        color: "white",
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "white",
+                        font: {
+                            size: 14
+                        },
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+
+});
+
+fetch(`/cartas/raridade-cartas/${sessionStorage.ID_USUARIO}`)
   .then(res => res.json())
   .then(dados => {
 
-      var labels = dados.map(i => i.carta_tipo);
-      var valores = dados.map(i => i.quantidade);
-
-      new Chart(document.getElementById("graficoBarras1"), {
-          type: "bar",
-          data: {
-              labels: labels,
-              datasets: [{
-                  data: valores
-              }]
-          }
-      });
-
-  });
-
-fetch("/cartas/raridade-cartas")
-  .then(res => res.json())
-  .then(dados => {
+    if(dados.length == 0){
+        document.querySelector(".grafico_de_barras2").innerHTML = "<h2>Nenhum dado cadastrado ainda!</h2>";
+        return;
+    }
 
       const labels = dados.map(i => i.carta_raridade);
       const valores = dados.map(i => i.quantidade);
@@ -158,7 +298,25 @@ fetch("/cartas/raridade-cartas")
               datasets: [{
                   data: valores
               }]
-          }
+          },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Raridade das Cartas",
+                        font: {
+                            size: 22
+                        },
+                        color: "white"
+                    },
+
+                    legend: {
+                        labels: {
+                            color: "white"
+                        }
+                    }
+                }
+            }
       });
 
   });

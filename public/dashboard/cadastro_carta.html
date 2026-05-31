@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeSwap | Cartas</title>
+    <title>PokeSwap | Cadastro de Cartas</title>
 
     
     <link rel="stylesheet" href="./../css/estilo_cadastro_carta.css">
@@ -36,6 +36,10 @@
 
                 <li>
                     <a href="album_carta.html">🃏 Álbum de Cartas</a>
+                </li>
+
+                <li>
+                    <a href="cartas_geral.html">💱 Cartas Gerais</a>
                 </li>
 
             </div>
@@ -87,7 +91,8 @@ div_resultado.innerHTML = "";
 
             for(let i = 0; i < json.data.length; i++){
 
-                div_resultado.innerHTML += `<div class="card_carta" onclick='selecionarCarta("${json.data[i].id}", "${json.data[i].name}", "${json.data[i].images.small}", "${json.data[i].types?.[0] || "desconhecido"}", "${json.data[i].supertype}", "${json.data[i].rarity || "Comum"}")'; this.style.transform="scale(1.1)"''>
+                div_resultado.innerHTML += `<div class="card_carta"
+onclick='selecionarCarta("${json.data[i].id}", "${json.data[i].name}", "${json.data[i].images.small}", "${json.data[i].types?.[0] || "desconhecido"}", "${json.data[i].supertype}", "${json.data[i].rarity || "Comum"}"); this.style.transform="scale(1.1)"'>
 
                                             <img src="${json.data[i].images.small}">
 

@@ -16,7 +16,7 @@ body{
 
 .pagina_dash{
     display:flex;
-    min-height:100%;
+    min-height:1080px;
 }
 
 /* ================================= */
@@ -39,9 +39,8 @@ body{
 }
 
 .navbar_esquerda img{
-
     width:140px;
-
+    margin-top:20px;
     margin-bottom:60px;
 }
 
@@ -89,17 +88,17 @@ body{
 /* ================================= */
 
 .conteudo_dashboard{
-
     width:100%;
+    padding:20px;
 
-    padding:35px;
+    margin-top:30px;
 }
 
 .titulo_dash{
 
-    font-size:38px;
+    font-size:32px;
 
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 /* ================================= */
@@ -107,14 +106,13 @@ body{
 /* ================================= */
 
 .painel_dashboard{
-
     background:rgba(255,255,255,0.04);
 
     border:1px solid rgba(255,255,255,0.05);
 
     border-radius:30px;
 
-    padding:30px;
+    padding:20px;
 
     backdrop-filter:blur(12px);
 
@@ -129,22 +127,20 @@ body{
 
     display:flex;
     flex-direction:column;
-
-    gap:30px;
+    gap:20px;
 }
 
 .KPI_ajuste{
-
     display:flex;
-
-    gap:25px;
+    gap:20px;
+    justify-content:space-between;
 }
 
 .KPI1_dash,
 .KPI2_dash,
 .KPI3_dash{
 
-    width:250px;
+    width:33%;
 
     background:linear-gradient(
         145deg,
@@ -154,15 +150,16 @@ body{
 
     border-radius:24px;
 
-    padding:25px;
+    border:1px solid rgba(255,255,255,0.05);
+    border-top:5px solid white;
 
-    height:150px;
+    padding:20px;
+
+    height:130px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
-
-    border:1px solid rgba(255,255,255,0.05);
 
     box-shadow:0 10px 30px rgba(0,0,0,0.25);
 
@@ -182,9 +179,10 @@ body{
 
     margin-top:15px;
 
-    font-size:34px;
+    font-size:26px;
 
     font-weight:700;
+    
 }
 
 /* ================================= */
@@ -207,8 +205,21 @@ body{
 
 .grafico_de_barras1 canvas,
 .grafico_de_barras2 canvas{
-
     width:100%;
+    height:100%;
+}
 
-    height:320px;
+.graficos{
+    display:flex;
+    gap:20px;
+}
+
+.grafico_de_barras1{
+    width:100%;
+    height:100%;
+}
+
+.grafico_de_barras2{
+    width:50%;
+    height:100%;
 }

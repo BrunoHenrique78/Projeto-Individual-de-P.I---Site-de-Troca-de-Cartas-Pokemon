@@ -140,9 +140,11 @@ body{
 
 .titulo_cadastro_carta{
 
-    font-size: 50px;
+    font-size: 42px;
 
-    margin-top: 1px;
+    text-align: center;
+
+    margin-bottom: 25px;
 }
 
 /* ========================= */
@@ -242,23 +244,30 @@ body{
     display: flex;
 }
 
-.modal-box {
-    background: #222;
-    padding: 20px;
-    border-radius: 15px;
-    color: white;
+.modal-box{
 
-    display: flex;
-    gap: 20px;
-    align-items: center;
+    background:#1d1d1d;
+
+    width:700px;
+
+    max-width:90%;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:flex-start;
+
+    position:relative;
 }
-
 #area-input input {
     width: 80%;
     padding: 10px;
     border-radius: 10px;
-    border: none;
-    outline: none;
     background: rgb(70,70,70);
     color: white;
 }
@@ -297,10 +306,6 @@ body{
     gap: 20px;
 }
 
-.modal-info {
-    flex: 1;
-}
-
 .modal-forum {
     display: flex;
     flex-direction: column;
@@ -318,12 +323,28 @@ body{
     margin-top: 10px;
 }
 
-.input-forum input {
-    padding: 8px;
+.input-forum input{
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    background: #3b3b3b;
+
+    color: white;
 }
 
 .input-forum button {
+    
+    color: black;
+
+    font-weight: bold;
+    
     padding: 8px 12px;
+    
+    
     cursor: pointer;
 }
 
@@ -332,11 +353,59 @@ body{
     gap: 15px;
 }
 
+#modal-img{
+
+    width: 250px;
+
+    border-radius: 15px;
+}
+
 #lista-mensagens{
-    display: flex;
-    min-height:300px;
-    background:#2f2f2f;
-    border-radius:10px;
-    padding:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    height:300px;
+
     overflow-y:auto;
+
+    background:#2f2f2f;
+
+    border-radius:15px;
+
+    padding:15px;
+}
+
+#lista-mensagens p{
+
+    background: rgba(255,255,255,0.08);
+
+    padding: 10px;
+
+    border-radius: 10px;
+}
+
+.card_carta{
+
+    width: 220px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.card_carta:hover{
+
+    transform: translateY(-10px) scale(1.03);
+}
+
+.card_carta img{
+
+    width: 100%;
 }

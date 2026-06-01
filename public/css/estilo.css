@@ -1,23 +1,21 @@
 body{
-    margin: 0; /* remove a margem padrão do navegador */
+    margin: 0;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-/* CABEÇALHO */
-
 .parte_superior{
-    width: 100%; /* faz o cabeçalho ocupar toda a largura da tela */
-    border-bottom: 4px solid rgb(39, 39, 39); /* cria uma linha azul na parte de baixo */
-    display: flex; /* ativa o flexbox para organizar os elementos em linha e deixa eles alinhados na horizontal */
-    justify-content: space-between; /* joga os itens para as extremidades (esquerda e direita) */
-    align-items: center; /* centraliza os itens verticalmente */
+    width: 100%;
+    border-bottom: 4px solid rgb(39, 39, 39);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        font-weight: bold; /* coloca o negrito no texto dentro do span */
+        font-weight: bold;
         
-        background-color: black; /* Fundo preto. */
+        background-color: black;
 
         position: fixed;
         z-index: 999;
@@ -33,54 +31,52 @@ html {
 }
 
 .parte_superior li{
-    list-style: none; /* tira os "•" do itens (Home / Login / Cadastro) */
+    list-style: none;
 }
 
 .parte_superior a{
-    color: gray; /* cor da fonte */
+    color: gray;
     font-size: 20px;
     text-decoration: none;
 }
 
 .titulo_superior{
-    margin-left: 100px; /* faz um "espaçamento" de tudo que está na esquerda do titulo */
-    font-size: 37px; /* tamanho da fonte */
+    margin-left: 100px;
+    font-size: 37px;
 }
 
 .parte_superior img{
-    height: 140px; /* tamanho da imagem (Logo) */
-    margin-left: 50px; /* faz um "espaçamento" de tudo que está na esquerda da imagem */
-    margin-top: 10px; /* faz um "espaçamento" de tudo que está em cima da imagem */
+    height: 140px;
+    margin-left: 50px;
+    margin-top: 10px;
 }
 
 .itens_superior{
-    display: flex; /* Faz os itens ficarem em linha */
-    gap: 30px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
-    margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+    display: flex;
+    gap: 30px;
+    margin-right: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Parte do Card de Cadastro e Login */
-
 .fundo{
     background-image: url("../assets/imgs/fundo_cadastro_login.png");
-    background-size: cover; /* A imagem cobre toda a tela, sem se repetir */
-    height: 1080px; /* A altura da tela de login é 860px */
+    background-size: cover;
+    height: 1080px;
     display: flex;
 
-        justify-content: center; /* centraliza horizontal */
-        align-items: center;     /* centraliza vertical */
+        justify-content: center;
+        align-items: center;
 
-        font-weight: bold; /* coloca o negrito no texto dentro do span */
+        font-weight: bold;
 
         color: white;
 }
 
 .card{
-    background-color: rgb(36, 36, 36); /* Cor de fundo do cartão é cinza claro */
-    border-radius: 13px; /* Arredonda os cantos do cartão */
-    width: 450px; /* Largura do cartão é 450px */
-    text-align: center; /* Centraliza o texto dentro do cartão */
+    background-color: rgb(36, 36, 36);
+    border-radius: 13px;
+    width: 450px;
+    text-align: center;
     padding: 25px;
 }
 
@@ -92,24 +88,24 @@ html {
 }
 
 .card span{
-    font-weight: bold; /* coloca o negrito no texto dentro do span */
+    font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card input{
-    padding: 7px; /* Coloca 10px de espaço dentro dos campos. */
-    border-radius: 8px; /* Arredonda os cantos dos campos. */
-    border: 2px solid gray; /* Define uma borda azul clara ao redor dos campos. */
+    padding: 7px;
+    border-radius: 8px;
+    border: 2px solid gray;
 }
 
 .botao{
     width: 42%;
-    background-color: gray; /* Cor de fundo do botão é rosa. */
-    color: white; /* Cor do texto do botão é branco. */
-    padding: 10px; /* Coloca 10px de espaço dentro do botão. */
-    border: none; /* Remove a borda padrão do botão. */
-    border-radius: 8px; /* Arredonda os cantos do botão. */
-    font-weight: bold; /* Deixa o texto que está dentro do botão em negrito */
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
 }
 
 .botao a:hover{
@@ -129,9 +125,9 @@ html {
 }
 
 .login_inicio{
-    display: flex; /* Faz os itens ficarem em linha */
-    gap: 25px; /* Coloca um espaço de 25px entre os itens (tipos um space-between)*/
-    margin-right: 50px; /* faz um "espaçamento" de tudo que está na direita dos itens */
+    display: flex;
+    gap: 25px;
+    margin-right: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -150,10 +146,10 @@ a:hover{
     height: 85.7vh;
     padding-top: 100px;
     display: flex;
-    align-items: center;      /* centraliza vertical */
-    justify-content: flex-start; /* joga pra esquerda */
+    align-items: center;
+    justify-content: flex-start;
 
-    padding-left: 100px; /* espaço da esquerda */
+    padding-left: 100px;
 
     color: white;
     
@@ -193,7 +189,7 @@ a:hover{
     background-color: white;
     color: black;
 
-    text-decoration: none; /* tira o sublinhado */
+    text-decoration: none;
 
     border-radius: 8px;
 
@@ -225,10 +221,10 @@ a:hover{
     height: 85.7vh;
 
     display: flex;
-    align-items: center;      /* centraliza vertical */
-    justify-content: flex-start; /* joga pra esquerda */
+    align-items: center;
+    justify-content: flex-start;
 
-    padding-left: 100px; /* espaço da esquerda */
+    padding-left: 100px;
 
     color: white; 
 }

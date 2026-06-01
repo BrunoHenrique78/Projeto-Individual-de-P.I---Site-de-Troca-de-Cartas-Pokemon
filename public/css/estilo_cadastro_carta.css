@@ -10,18 +10,10 @@ body{
     color: white;
 }
 
-/* ================================= */
-/* DASH */
-/* ================================= */
-
 .pagina_dash{
     display:flex;
     min-height:100%;
 }
-
-/* ================================= */
-/* NAVBAR */
-/* ================================= */
 
 .navbar_esquerda{
 
@@ -84,19 +76,11 @@ body{
     transform:translateX(-2px);
 }
 
-/* ========================= */
-/*  PÁGINA CADASTRO_CARTAS   */
-/* ========================= */
-
 .cadastro_carta{
     background: linear-gradient(135deg, rgb(39, 39, 39), rgb(51, 51, 51), rgb(100, 100, 100));
 
     display: flex;
 }
-
-/* ========================= */
-/*      PAINEL DASHBOARD     */
-/* ========================= */
 
 .painel_cadastro_carta{
 
@@ -115,10 +99,6 @@ body{
     overflow-y: auto;
 }
 
-/* ========================= */
-/*      CONTEÚDO DASH        */
-/* ========================= */
-
 .conteudo_cadastro_carta{
 
     width: 100%;
@@ -134,10 +114,6 @@ body{
     color: white;
 }
 
-/* ========================= */
-/*         TÍTULOS           */
-/* ========================= */
-
 .titulo_cadastro_carta{
 
     font-size: 42px;
@@ -146,10 +122,6 @@ body{
 
     margin-bottom: 25px;
 }
-
-/* ========================= */
-/*      BARRA PESQUISA       */
-/* ========================= */
 
 .barra_pesquisa{
 

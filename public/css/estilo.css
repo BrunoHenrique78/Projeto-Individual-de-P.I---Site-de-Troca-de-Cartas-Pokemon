@@ -2,6 +2,10 @@ body{
     margin: 0; /* remove a margem padrão do navegador */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* CABEÇALHO */
 
 .parte_superior{
@@ -163,7 +167,7 @@ a:hover{
 
 .filtro{
     width: 100%;
-    height: 91%;
+    height: 90.4%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.397);
     left: 0;
@@ -447,7 +451,7 @@ a:hover{
 }
 
 .pagina_cinco{
-    background-image: url("../assets/imgs/thumb-1920-1092839.png");
+    background-image: url("../assets/imgs/thumb-1920-1039168.png");
     background-size: cover;
     background-position: center;
     height: 150vh;
@@ -458,12 +462,4 @@ a:hover{
 
     background-attachment: fixed;
     position: relative;
-}
-
-.filtro2{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.397);
-    left: 0;
 }

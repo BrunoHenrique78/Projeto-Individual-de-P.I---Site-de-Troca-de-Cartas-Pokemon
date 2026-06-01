@@ -81,7 +81,7 @@ body{
 
     color:white;
 
-    transform:translateX(5px);
+    transform:translateX(-2px);
 }
 
 /* ========================= */
@@ -155,7 +155,7 @@ body{
 
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 
     width: 100%;
 
@@ -244,11 +244,32 @@ body{
     display: flex;
 }
 
-.modal-box{
+.modal-box1{
 
     background:#1d1d1d;
 
-    width:700px;
+    width:600px;
+
+    max-width:90%;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    display:flex;
+
+    gap:30px;
+
+    align-items:flex-start;
+
+    position:relative;
+}
+
+.modal-box2{
+
+    background:#1d1d1d;
+
+    width:1000px;
 
     max-width:90%;
 
@@ -343,7 +364,7 @@ body{
     font-weight: bold;
     
     padding: 8px 12px;
-    
+
     
     cursor: pointer;
 }
@@ -358,6 +379,17 @@ body{
     width: 250px;
 
     border-radius: 15px;
+}
+
+.modal-info2{
+
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 20px;
+
+    line-height: 2;
 }
 
 #lista-mensagens{
@@ -408,4 +440,16 @@ body{
 .card_carta img{
 
     width: 100%;
+}
+
+.info-carta{
+    display: flex;
+    flex-direction: column;
+}
+
+.destaque{
+    color: black;
+    background: white;
+    width: fit-content;
+    padding: 5px;
 }

@@ -14,6 +14,9 @@ body{
         font-weight: bold; /* coloca o negrito no texto dentro do span */
         
         background-color: black; /* Fundo preto. */
+
+        position: fixed;
+        z-index: 999;
        
 }
 
@@ -137,18 +140,33 @@ a:hover{
 }
 
 .pagina_um{
-    background-image: url("../assets/imgs/fundo_normal.png");
+    background-image: url("../assets/imgs/thumb-1920-1243302.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;
-
+    padding-top: 100px;
     display: flex;
     align-items: center;      /* centraliza vertical */
     justify-content: flex-start; /* joga pra esquerda */
 
     padding-left: 100px; /* espaço da esquerda */
 
-    color: white; 
+    color: white;
+    
+    background-attachment: fixed;
+    position: relative;
+}
+
+.itens_pag1{
+    z-index: 998;
+}
+
+.filtro{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.397);
+    left: 0;
 }
 
 .titulo_principal{
@@ -156,17 +174,13 @@ a:hover{
     font-weight: bold;
     line-height: 1.2;
 
-    text-shadow:
-        -1px -1px 0 black,
-         1px -1px 0 black,
-        -1px  1px 0 black,
-         1px  1px 0 black;
+
 }
 
 .descricao{
     margin-top: 20px;
     font-size: 18px;
-    color: #ccc;
+    color: #ffffff;
     max-width: 500px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -203,7 +217,7 @@ a:hover{
 
 
 .pagina_dois{
-    background-image: url("../assets/imgs/fundo_normal_invertido.png");
+    background-image: url("../assets/imgs/fundo_normal.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;
@@ -263,7 +277,7 @@ a:hover{
 }
 
 .pagina_tres{
-    background-image: url("../assets/imgs/fundo_normal.png");
+    background-image: url("../assets/imgs/thumb-1920-1236668.png");
     background-size: cover;
     background-position: center;
     height: 150vh;
@@ -271,12 +285,15 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-attachment: fixed;
+    position: relative;
 }
 
 .itens_pag3{
     width: 900px;
     
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.596);
     backdrop-filter: blur(10px); 
 
     border-radius: 20px;
@@ -349,11 +366,11 @@ a:hover{
 }
 
 .pagina_tres{
-    border-top: 2px solid rgba(255,255,255,0.1);
+    border-top: 2px solid rgb(83, 83, 83);
 }
 
 .pagina_quatro{
-    background-image: url("../assets/imgs/fundo_normal_invertido.png");
+    background-image: url("../assets/imgs/fundo_normal.png");
     background-size: cover;
     background-position: center;
     height: 85.7vh;
